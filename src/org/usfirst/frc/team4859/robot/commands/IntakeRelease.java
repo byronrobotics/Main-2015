@@ -4,6 +4,9 @@ import org.usfirst.frc.team4859.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * This command makes the wheels spin freely and not have them in a fixed position
+ */
 public class IntakeRelease extends Command
 {
 	public IntakeRelease()
