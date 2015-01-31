@@ -28,7 +28,7 @@ public class Chassis extends Subsystem
 	public void initDefaultCommand ()
 	{
 		setDefaultCommand(new DriveWithJoystick());
-		
+		SmartDashboard.putDouble("Deadzone", .015);
 		SmartDashboard.putDouble("Velocity", motorLeft.getEncVelocity());
 		SmartDashboard.putDouble("Velocity", motorRight.getEncVelocity());
 	}
@@ -52,14 +52,16 @@ public class Chassis extends Subsystem
 				{
 					temp = 0;
 				}
-		
+		SmartDashboard.putNumber("Deadzone_Auto", deadzone);
+		SmartDashboard.putNumber("Value_Auto", value);
 		return temp;
 	}
 	
 	public void driveWithJoystick(Joystick joystickP0)
 	{
-		
-		final double deadzone = .015; // amount of deadspace around center
+		final double deadzone = SmartDashboard.getNumber("Deadzone_Manual");
+		SmartDashboard.putNumber("Deadzone_Manual_Read", deadzone);
+		//final double deadzone = .015; // amount of deadspace around center
 		//double x;
 		double y;
 		double twist;
