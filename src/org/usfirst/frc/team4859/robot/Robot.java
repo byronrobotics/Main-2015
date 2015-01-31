@@ -2,6 +2,8 @@ package org.usfirst.frc.team4859.robot;
 
 import org.usfirst.frc.team4859.robot.commands.Autonomous;
 import org.usfirst.frc.team4859.robot.subsystems.Chassis;
+import org.usfirst.frc.team4859.robot.subsystems.Intake;
+import org.usfirst.frc.team4859.robot.subsystems.Lifter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -13,6 +15,8 @@ public class Robot extends IterativeRobot
 {
 	//Create subsystems
 	public static Chassis chassis;
+	public static Intake intake;
+	public static Lifter lifter;
 	public static OI oi;
 
     Command autonomousCommand;
@@ -25,6 +29,8 @@ public class Robot extends IterativeRobot
     public void robotInit()
     {
     	chassis = new Chassis();
+    	intake = new Intake();
+    	lifter = new Lifter();
 		oi = new OI();
 		
         // instantiate the command used for the autonomous period
