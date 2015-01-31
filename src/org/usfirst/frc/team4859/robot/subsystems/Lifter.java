@@ -16,18 +16,18 @@ public class Lifter extends Subsystem
 		
 		public void liftUp()
 		{
-			//set motor speeds for when you call IntakeIn
+			//set motor speeds for when you call LiftUp
 		}
 		
 		
 		public void liftDown()
 		{
-			//set motor speeds for when you call IntakeOut
+			//set motor speeds for when you call LiftDown
 		}
 		
 		
 		public void liftStop()
 		{
-			//set motor speeds for when you call IntakeRelease
+			//set motor speeds for when you call LiftStop
 		}
 }
