@@ -12,20 +12,26 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Chassis extends Subsystem
 {
 
-	SpeedController motorLeft, motorRight;
-	RobotDrive drive;
+	static CANTalon motorLeft = new CANTalon(12);
+	static CANTalon motorRight = new CANTalon(14);
+	
+	//front is top of "U" back is bottom of "U"
+	static RobotDrive drive = new RobotDrive(motorLeft, motorRight);
 	
 	public Chassis()
 	{
 		super();
-		drive = new RobotDrive(motorLeft, motorRight);
-		drive.setSafetyEnabled(false);
+		drive.setSafetyEnabled(true);
+		drive.setExpiration(1);
 	}
 	
 	
 	public void initDefaultCommand ()
 	{
 		setDefaultCommand(new DriveWithJoystick());
+		
+		SmartDashboard.putDouble("Velocity", motorLeft.getEncVelocity());
+		SmartDashboard.putDouble("Velocity", motorRight.getEncVelocity());
 	}
 	
 	
@@ -73,6 +79,16 @@ public class Chassis extends Subsystem
 		y = -y/1.25;
 		
 		drive.arcadeDrive(twist, y);
+		
+		double m012 = SmartDashboard.getDouble("Velocity");
+		SmartDashboard.putDouble("V12", m012);
+		motorLeft.set(m012);
+		SmartDashboard.putDouble("V012", motorLeft.getEncVelocity());
+		
+		double m014 = SmartDashboard.getDouble("Velocity");
+		SmartDashboard.putDouble("V14", m014);
+		motorLeft.set(m014);
+		SmartDashboard.putDouble("V014", motorRight.getEncVelocity());
 	}
 	
 }
