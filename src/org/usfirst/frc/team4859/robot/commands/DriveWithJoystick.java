@@ -31,6 +31,5 @@ public class DriveWithJoystick extends Command
 	
 	protected void interrupted()
 	{
-		end();
 	}	
 }

@@ -5,7 +5,6 @@ import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -60,18 +59,18 @@ public class Chassis extends Subsystem
 	public void driveWithJoystick(Joystick joystickP0)
 	{
 		
-		final double deadzone = .01; // amount of deadspace around center
-		double x;
+		final double deadzone = .015; // amount of deadspace around center
+		//double x;
 		double y;
 		double twist;
 		
 		/** Get simple values from joystick **/
 		//x = joystickP0.getX();
 		//y = joystickP0.getY();
-		twist = joystickP0.getTwist();
+		twist = joystickP0.getTwist(); //z-axis check joysticks
 		
 		/** Get values from joystick, square, and apply deadzone **/
-		x = joystickAdjust(joystickP0.getX(), deadzone);
+		//x = joystickAdjust(joystickP0.getX(), deadzone);
 		y = joystickAdjust(joystickP0.getY(), deadzone);
 		//twist = joystickAdjust(joystickP0.getTwist(), deadzone);
 	
