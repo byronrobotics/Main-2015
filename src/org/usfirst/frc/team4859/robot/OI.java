@@ -12,6 +12,11 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI {
 	
+	double[][] joystickCorrectionTable = new double[2][4];
+	
+	
+	
+	
 	Joystick joystickP0 = new Joystick(0);
 	//created intake in button on joystickP0 on button 1
 	Button intakeIn = new JoystickButton(joystickP0,1);
@@ -40,9 +45,25 @@ public class OI {
 	public OI()
 	{	
 	//bind buttons to commands here	MAYBE
+		//initalize joystick correction table
+		initJoystickTable();
 	}
 	
 	
+	private void initJoystickTable() {
+		// TODO Auto-generated method stub
+		joystickCorrectionTable[0][0]= .01;
+		joystickCorrectionTable[1][0]= .30;
+		joystickCorrectionTable[2][0]= .50;
+		joystickCorrectionTable[3][0]= .80;
+		
+		joystickCorrectionTable[0][1]= .00;
+		joystickCorrectionTable[1][1]= .30;
+		joystickCorrectionTable[2][1]= .50;
+		joystickCorrectionTable[3][1]= .80;
+	}
+
+
 	public Joystick getJoystick()
 	{
 		return joystickP0;
