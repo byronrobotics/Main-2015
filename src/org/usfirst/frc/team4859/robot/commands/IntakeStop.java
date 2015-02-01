@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * This command makes the wheels spin freely and not have them in a fixed position
  */
-public class IntakeRelease extends Command
+public class IntakeStop extends Command
 {
-	public IntakeRelease()
+	public IntakeStop()
 	{
 		requires(Robot.intake);
 	}
@@ -17,7 +17,7 @@ public class IntakeRelease extends Command
 	
 	protected void initialize()
 	{
-		Robot.intake.intakeRelease();
+		Robot.intake.intakeStop();
 	}
 
 	
@@ -35,7 +35,7 @@ public class IntakeRelease extends Command
 	
 	protected void end()
 	{
-		Robot.intake.intakeRelease();
+		Robot.intake.intakeStop();
 	}
 
 	

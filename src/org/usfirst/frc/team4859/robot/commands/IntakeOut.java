@@ -34,7 +34,7 @@ public class IntakeOut extends Command
 	
 	protected void end()
 	{
-		Robot.intake.intakeRelease();
+		Robot.intake.intakeStop();
 	}
 
 	

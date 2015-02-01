@@ -42,9 +42,9 @@ public class Intake extends Subsystem
 	}
 	
 	
-	public void intakeRelease()
+	public void intakeStop()
 	{
-		//set motor speeds for when you call IntakeRelease
+		//set motor speeds for when you call IntakeStop
 		intakeMotorLeft.set(0.0/*SOMEONE MAY NEED TO CHANGE THIS*/);
 		intakeMotorRight.set(0.0/*SOMEONE MAY NEED TO CHANGE THIS ALSO*/);
 	}
