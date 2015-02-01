@@ -28,9 +28,9 @@ public class Chassis extends Subsystem
 	public void initDefaultCommand ()
 	{
 		setDefaultCommand(new DriveWithJoystick());
-		SmartDashboard.putDouble("Deadzone", .015);
-		SmartDashboard.putDouble("Velocity", motorLeft.getEncVelocity());
-		SmartDashboard.putDouble("Velocity", motorRight.getEncVelocity());
+		SmartDashboard.putNumber("Deadzone", .015);
+		SmartDashboard.putNumber("Velocity", motorLeft.getEncVelocity());
+		SmartDashboard.putNumber("Velocity", motorRight.getEncVelocity());
 	}
 	
 	
@@ -82,14 +82,14 @@ public class Chassis extends Subsystem
 		drive.arcadeDrive(twist, y);
 		
 		double m012 = SmartDashboard.getDouble("Velocity");
-		SmartDashboard.putDouble("V12", m012);
+		SmartDashboard.putNumber("V12", m012);
 		motorLeft.set(m012);
-		SmartDashboard.putDouble("V012", motorLeft.getEncVelocity());
+		SmartDashboard.putNumber("V012", motorLeft.getEncVelocity());
 		
 		double m014 = SmartDashboard.getDouble("Velocity");
-		SmartDashboard.putDouble("V14", m014);
+		SmartDashboard.putNumber("V14", m014);
 		motorLeft.set(m014);
-		SmartDashboard.putDouble("V014", motorRight.getEncVelocity());
+		SmartDashboard.putNumber("V014", motorRight.getEncVelocity());
 	}
 	
 }
