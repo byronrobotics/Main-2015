@@ -21,7 +21,7 @@ public class LiftDown extends Command
 	
 	protected void execute()
 	{
-		//SmartDashboard.putNumber("Lift Down Speed", );
+		 
 	}
 
 	

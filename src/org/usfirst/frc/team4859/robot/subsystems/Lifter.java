@@ -2,6 +2,7 @@ package org.usfirst.frc.team4859.robot.subsystems;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Lifter extends Subsystem
 {
@@ -22,6 +23,8 @@ public class Lifter extends Subsystem
 			//set motor speeds for when you call LiftUp
 			motorLifterLeft.set(0.25);
 			motorLifterRight.set(0.25);
+			SmartDashboard.putNumber("LiftMotor Speed", motorLifterLeft.getEncVelocity());
+			SmartDashboard.putNumber("LiftMotor Speed", motorLifterRight.getEncVelocity());
 		}
 		
 		
@@ -30,6 +33,8 @@ public class Lifter extends Subsystem
 			//set motor speeds for when you call LiftDown
 			motorLifterLeft.set(-0.25);
 			motorLifterRight.set(-0.25);
+			SmartDashboard.putNumber("LiftMotor Speed", motorLifterLeft.getEncVelocity());
+			SmartDashboard.putNumber("LiftMotor Speed", motorLifterRight.getEncVelocity());
 		}
 		
 		
