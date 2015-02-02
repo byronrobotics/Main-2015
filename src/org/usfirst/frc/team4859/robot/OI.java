@@ -18,10 +18,13 @@ public class OI {
 	
 	
 	Joystick joystickP0 = new Joystick(0);
+	
 	//created intake in button on joystickP0 on button 1
 	Button intakeIn = new JoystickButton(joystickP0,1);
+	
 	//created intakeOut button on joystickP0 on button 2
 	Button intakeOut = new JoystickButton(joystickP0,2);
+	
 	//// CREATING THINGS
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
@@ -45,7 +48,6 @@ public class OI {
 	public OI()
 	{	
 	//bind buttons to commands here	MAYBE
-		//initalize joystick correction table
 		initJoystickTable();
 	}
 	
