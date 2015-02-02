@@ -16,7 +16,7 @@ public class OI {
 	
 	
 	
-	
+	// Define a joystick on port 0
 	Joystick joystickP0 = new Joystick(0);
 	
 	//created intake in button on joystickP0 on button 1
