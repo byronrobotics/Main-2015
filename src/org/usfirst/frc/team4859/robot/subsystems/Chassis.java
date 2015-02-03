@@ -17,7 +17,7 @@ public class Chassis extends Subsystem
 	//front is top of "U" back is bottom of "U"
 	static RobotDrive drive = new RobotDrive(motorLeft, motorRight);
 	
-	Joystick joystickP0 = new Joystick(0);
+	
 
 	public Chassis()
 	{
