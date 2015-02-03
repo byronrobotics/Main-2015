@@ -10,14 +10,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Chassis extends Subsystem
 {
-
-	static CANTalon motorLeft = new CANTalon(13);
-	static CANTalon motorRight = new CANTalon(14);
+	static CANTalon motorChassisLeft = new CANTalon(13);
+	static CANTalon motorChassisRight = new CANTalon(14);
 	
 	//front is top of "U" back is bottom of "U"
-	static RobotDrive drive = new RobotDrive(motorLeft, motorRight);
-	
-	Joystick joystickP0 = new Joystick(0);
+	static RobotDrive drive = new RobotDrive(motorChassisLeft, motorChassisRight);
 
 	public Chassis()
 	{
@@ -36,8 +33,8 @@ public class Chassis extends Subsystem
 		SmartDashboard.putNumber("Deadzone", .01);
 		
 		//the Intial value of the encoders we put to the dashboard
-		SmartDashboard.putNumber("Velocity", motorLeft.getEncVelocity());
-		SmartDashboard.putNumber("Velocity1", motorRight.getEncVelocity());
+		SmartDashboard.putNumber("Velocity", motorChassisLeft.getEncVelocity());
+		SmartDashboard.putNumber("Velocity1", motorChassisRight.getEncVelocity());
 	}
 	
 	
@@ -65,7 +62,8 @@ public class Chassis extends Subsystem
 		return temp;
 	}
 	
-	public void driveWithJoystick(Joystick joystickP0){
+	public void driveWithJoystick(Joystick joystickP0)
+	{
 		//calling the deadzone a double, done to change value in dashboard
 		double dz = SmartDashboard.getNumber("Deadzone");
 		SmartDashboard.putNumber("Deadzone_Manual", dz);
@@ -97,7 +95,7 @@ public class Chassis extends Subsystem
 		//Finally the V012 is our final read on what our Encoder is reading out
 		double m012 = SmartDashboard.getDouble("Velocity");
 		SmartDashboard.putNumber("EditV12", m012);
-		SmartDashboard.putNumber("V012", motorLeft.getEncVelocity());
+		SmartDashboard.putNumber("V012", motorChassisLeft.getEncVelocity());
 
 		//m014 is CANTalon 14 encoder 
 		//we create a double m014 so we can get "Velocity1" that value is then what we change in Dashboard to set the motor
@@ -105,14 +103,14 @@ public class Chassis extends Subsystem
 		//Finally the V014 is our final read on what our Encoder is reading out
 		double m014 = SmartDashboard.getDouble("Velocity1");
 		SmartDashboard.putNumber("EditV14", m014);
-		SmartDashboard.putNumber("V014", motorRight.getEncVelocity());
+		SmartDashboard.putNumber("V014", motorChassisRight.getEncVelocity());
 		
 		//here we are stating that we have to use button 3 in order to use encoders to set the speed of the wheels
 		//BE CAREFUL USING BUTTON 3!!
 		//it swaps between our joystick drive and our encoder drive
 		if(joystickP0.getRawButton(3)){
-			motorLeft.set(m012);
-			motorRight.set(m014);
+			motorChassisLeft.set(m012);
+			motorChassisRight.set(m014);
 		} else {
 			drive.arcadeDrive(twist, y);
 		}
