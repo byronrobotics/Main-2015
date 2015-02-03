@@ -46,7 +46,8 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 	
 	public OI()
-	{	
+	{
+		joystickP0 = new Joystick(0);
 	//bind buttons to commands here	MAYBE
 		initJoystickTable();
 	}
