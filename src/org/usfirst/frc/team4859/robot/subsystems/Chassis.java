@@ -33,6 +33,8 @@ public class Chassis extends Subsystem
 	{
 		setDefaultCommand(new DriveWithJoystick());
 		
+		//Initial value
+		//Made to change our Deadzone values in dashboard
 		SmartDashboard.putNumber("Deadzone", .01);
 		
 		//the Intial value of the encoders we put to the dashboard
@@ -59,13 +61,14 @@ public class Chassis extends Subsystem
 				{
 					temp = 0;
 				}
+		//Putting Deadzone values to dashboard from equation
 		SmartDashboard.putNumber("Deadzone_Auto", deadzone);
 		SmartDashboard.putNumber("Value_Auto", value);
 		return temp;
 	}
 	
-	public void driveWithJoystick(Joystick joystickP0)
-	{
+	public void driveWithJoystick(Joystick joystickP0){
+		//calling the deadzone a double, done to change value in dashboard
 		double dz = SmartDashboard.getNumber("Deadzone");
 		SmartDashboard.putNumber("Deadzone_Manual", dz);
 		final double deadzone =dz;
