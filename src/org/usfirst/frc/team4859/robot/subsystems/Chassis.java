@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4859.robot.subsystems;
-
 import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
+import org.usfirst.frc.teams4859.robot.ThrottleLookup.ThrottleLookup;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Chassis extends Subsystem
 {
 	//Setting motors to CANTalon IDs
-	static CANTalon motorChassisLeft = new CANTalon(13);
+	static CANTalon motorChassisLeft = new CANTalon(12);
 	static CANTalon motorChassisRight = new CANTalon(14);
 	
 	//front is top of "U" back is bottom of "U"
@@ -20,7 +20,7 @@ public class Chassis extends Subsystem
 	public Chassis()
 	{
 		super();
-		
+
 		//Set a timeout for the motors (1 second)
 		drive.setSafetyEnabled(true);
 		drive.setExpiration(1);
@@ -78,11 +78,17 @@ public class Chassis extends Subsystem
 		
 		// Get simple values from joystick
 		//x = joystickP0.getX();
-		//y = joystickP0.getY();
+		y = joystickP0.getY();
 		twist = joystickP0.getTwist(); //z-axis check joysticks
 		
 		// Get values from joystick, square, and apply deadzone
 		//x = joystickAdjust(joystickP0.getX(), deadzone);
+		
+		SmartDashboard.putNumber("Orig Y", y);
+		y = ThrottleLookup.calcJoystickCorrection(y);
+		SmartDashboard.putNumber("After Y", y);
+
+		
 		y = joystickAdjust(joystickP0.getY(), deadzone);
 		//twist = joystickAdjust(joystickP0.getTwist(), deadzone);
 	

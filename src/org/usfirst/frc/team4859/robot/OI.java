@@ -48,25 +48,9 @@ public class OI {
 	public OI()
 	{
 		joystickP0 = new Joystick(0);
-	//bind buttons to commands here	MAYBE
-		initJoystickTable();
 	}
 	
 	
-	private void initJoystickTable() {
-		// TODO Auto-generated method stub
-		joystickCorrectionTable[0][0]= .01;
-		joystickCorrectionTable[1][0]= .30;
-		joystickCorrectionTable[2][0]= .50;
-		joystickCorrectionTable[3][0]= .80;
-		
-		joystickCorrectionTable[0][1]= .00;
-		joystickCorrectionTable[1][1]= .30;
-		joystickCorrectionTable[2][1]= .50;
-		joystickCorrectionTable[3][1]= .80;
-	}
-
-
 	public Joystick getJoystick()
 	{
 		return joystickP0;
