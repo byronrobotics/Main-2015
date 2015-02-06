@@ -70,13 +70,8 @@ public class Chassis extends Subsystem
 		//calling the deadzone a double, done to change value in dashboard
 		double deadzone = SmartDashboard.getNumber("Deadzone");
 		SmartDashboard.putNumber("Deadzone Manual", deadzone);
-<<<<<<< HEAD
-		
-=======
 
 		//final double deadzone = .015; // amount of deadspace around center
-		//double x;
->>>>>>> origin/master
 		double y;
 		double twist;
 		
