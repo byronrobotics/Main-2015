@@ -11,6 +11,7 @@ public class IntakeStop extends Command
 {
 	public IntakeStop()
 	{
+		//says that this command need the robot subsystem called intake in order to run
 		requires(Robot.intake);
 	}
 	
@@ -35,6 +36,7 @@ public class IntakeStop extends Command
 	
 	protected void end()
 	{
+		//tells the command to stop
 		Robot.intake.intakeStop();
 	}
 

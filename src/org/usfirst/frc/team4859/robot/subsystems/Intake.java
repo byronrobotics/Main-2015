@@ -2,13 +2,13 @@ package org.usfirst.frc.team4859.robot.subsystems;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-
 /*
  * This subsystem controlles the intake in, intake out, and intake release
  */
 
 public class Intake extends Subsystem
 {
+	//
 	CANTalon intakeMotorLeft;
 	CANTalon intakeMotorRight;
 	//Declare motors here
