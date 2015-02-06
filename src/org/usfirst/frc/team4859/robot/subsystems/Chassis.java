@@ -71,7 +71,7 @@ public class Chassis extends Subsystem
 		double deadzone = SmartDashboard.getNumber("Deadzone");
 		SmartDashboard.putNumber("Deadzone Manual", deadzone);
 
-		//final double deadzone = .015; // amount of deadspace around center
+		//deadzone = .015; // amount of deadspace around center
 		double y;
 		double twist;
 		
@@ -101,6 +101,16 @@ public class Chassis extends Subsystem
 		double m014 = SmartDashboard.getDouble("VelocityRight");
 		SmartDashboard.putNumber("EditV14", m014);
 		SmartDashboard.putNumber("V014", motorChassisRight.getEncVelocity());
+		
+		if(joystickP0.getRawButton(3))
+		{
+			motorChassisLeft.set(m012);
+			motorChassisRight.set(m014);
+		}
+		else
+		{
+			drive.arcadeDrive(twist, y);
+		}
 		
 		//here we are stating that we have to use button 3 in order to use encoders to set the speed of the wheels
 		//BE CAREFUL USING BUTTON 3!!

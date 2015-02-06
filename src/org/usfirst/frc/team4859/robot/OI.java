@@ -23,12 +23,19 @@ public class OI {
 	// Define a joystick on port 0
 	Joystick joystickP0 = new Joystick(0);
 	
+<<<<<<< HEAD
 	Button precisionMode = new JoystickButton(joystickP0, 8);
 	
 	//created intake in button on joystickP0 on button 1
+=======
+	// Create precision mode button on for button 8
+	public static boolean pMode = false;
+	
+	// Create intake in button on joystickP0 for button 1
+>>>>>>> origin/master
 	Button intakeIn = new JoystickButton(joystickP0,1);
 	
-	//created intakeOut button on joystickP0 on button 2
+	// Create intakeOut button on joystickP0 for button 2
 	Button intakeOut = new JoystickButton(joystickP0,2);
 	
 	public OI()
