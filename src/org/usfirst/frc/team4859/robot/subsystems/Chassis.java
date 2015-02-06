@@ -73,15 +73,9 @@ public class Chassis extends Subsystem
 	
 	public void driveWithJoystick(Joystick joystickP0){
 		//calling the deadzone a double, done to change value in dashboard
-<<<<<<< HEAD
-		double dz = SmartDashboard.getNumber("Deadzone");
-		SmartDashboard.putNumber("Deadzone_Manual", dz);
-		final double deadzone = dz;
-=======
 		double deadzone = SmartDashboard.getNumber("Deadzone");
 		SmartDashboard.putNumber("Deadzone Manual", deadzone);
->>>>>>> origin/master
-		
+
 		//final double deadzone = .015; // amount of deadspace around center
 		//double x;
 		double y;
