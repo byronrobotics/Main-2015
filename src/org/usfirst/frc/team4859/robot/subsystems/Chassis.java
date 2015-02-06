@@ -17,7 +17,6 @@ public class Chassis extends Subsystem
 	//front is top of "U" back is bottom of "U"
 	static RobotDrive drive = new RobotDrive(motorLeft, motorRight);
 	
-	
 
 	public Chassis()
 	{
@@ -69,7 +68,7 @@ public class Chassis extends Subsystem
 		//calling the deadzone a double, done to change value in dashboard
 		double dz = SmartDashboard.getNumber("Deadzone");
 		SmartDashboard.putNumber("Deadzone_Manual", dz);
-		final double deadzone =dz;
+		final double deadzone = dz;
 		
 		//final double deadzone = .015; // amount of deadspace around center
 		//double x;
