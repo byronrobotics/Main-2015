@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
+import org.usfirst.frc.team4859.robot.OI;
 import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
+
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -102,15 +104,6 @@ public class Chassis extends Subsystem
 		SmartDashboard.putNumber("EditV14", m014);
 		SmartDashboard.putNumber("V014", motorChassisRight.getEncVelocity());
 		
-		if(joystickP0.getRawButton(3))
-		{
-			motorChassisLeft.set(m012);
-			motorChassisRight.set(m014);
-		}
-		else
-		{
-			drive.arcadeDrive(twist, y);
-		}
 		
 		//here we are stating that we have to use button 3 in order to use encoders to set the speed of the wheels
 		//BE CAREFUL USING BUTTON 3!!
@@ -120,10 +113,18 @@ public class Chassis extends Subsystem
 			motorChassisLeft.set(m012);
 			motorChassisRight.set(m014);
 		}
+		else if(OI.pMode == true)
+		{
+			drive.arcadeDrive(twist/1.5, y/1.5);
+		}
 		else
 		{
 			drive.arcadeDrive(twist, y);
 		}
+		
+		SmartDashboard.putNumber("JoystickY", y);
+		SmartDashboard.putNumber("JoystickTwist", twist);
+		SmartDashboard.putBoolean("Precision Mode", OI.pMode);
 	}
 	
 }
