@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /*
  * This subsystem controlles the intake in, intake out, and intake release
  */
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Intake extends Subsystem
 {
@@ -31,6 +32,9 @@ public class Intake extends Subsystem
 		//set motor speeds for when you call IntakeIn
 		intakeMotorLeft.set(.25/*SPEED MAY HAVE TO BE CHANGED HIGHER OR LOWER OR TO A NEGATIVE*/);
 		intakeMotorRight.set(.25/*SPEED MAY HAVE TO BE CHANGED TO A HIGHER, LOWER OR TO A NEGATIVE*/);
+		SmartDashboard.putBoolean("intakeOut", false);
+		SmartDashboard.putBoolean("intakeIn", true);
+
 	}
 	
 	
@@ -39,6 +43,8 @@ public class Intake extends Subsystem
 		//set motor speeds for when you call IntakeOut
 		intakeMotorLeft.set(-.25/*SPEED MAY HAVE TO BE CHANGED TO A HIGHER,LOWER OR POSITIVE NUMBER*/);
 		intakeMotorRight.set(-.25/*SPEED MAY HAVE TO BE CHANGED TO A HIGHER,LOWER OR POSITIVE NUMBER*/);
+		SmartDashboard.putBoolean("intakeOut", true);
+		SmartDashboard.putBoolean("intakeIn", false);
 	}
 	
 	

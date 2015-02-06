@@ -27,6 +27,9 @@ public class Lifter extends Subsystem
 			motorLifterRight.set(0.25);
 			SmartDashboard.putNumber("LiftMotor Speed", motorLifterLeft.getEncVelocity());
 			SmartDashboard.putNumber("LiftMotor Speed1", motorLifterRight.getEncVelocity());
+			SmartDashboard.putBoolean("LiftDown", false);
+			SmartDashboard.putBoolean("LiftUp", true);
+
 		}
 		
 		
@@ -37,6 +40,8 @@ public class Lifter extends Subsystem
 			motorLifterRight.set(-0.25);
 			SmartDashboard.putNumber("LiftMotor Speed", motorLifterLeft.getEncVelocity());
 			SmartDashboard.putNumber("LiftMotor Speed1", motorLifterRight.getEncVelocity());
+			SmartDashboard.putBoolean("LiftDown", true);
+			SmartDashboard.putBoolean("LiftUp", false);
 		}
 		
 		
