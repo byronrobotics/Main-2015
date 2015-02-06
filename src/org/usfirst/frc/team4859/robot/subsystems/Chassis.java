@@ -2,7 +2,6 @@ package org.usfirst.frc.team4859.robot.subsystems;
 
 import org.usfirst.frc.team4859.robot.OI;
 import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
-
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -11,12 +10,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Chassis extends Subsystem
 {
-	//Setting motors to CANTalon IDs
+	//Setting chassis motors to CANTalon IDs
 	static CANTalon motorChassisLeft = new CANTalon(13);
 	static CANTalon motorChassisRight = new CANTalon(14);
 	
 	//front is top of "U" back is bottom of "U"
-	static RobotDrive drive = new RobotDrive(motorChassisLeft, motorChassisRight);
+	// Creates robot drive configuration with a left and right motor
+	static RobotDrive chassisDrive = new RobotDrive(motorChassisLeft, motorChassisRight);
 
 	
 	public Chassis()
@@ -24,8 +24,8 @@ public class Chassis extends Subsystem
 		super();
 		
 		//Set a timeout for the motors (1 second)
-		drive.setSafetyEnabled(true);
-		drive.setExpiration(1);
+		chassisDrive.setSafetyEnabled(true);
+		chassisDrive.setExpiration(1);
 	}
 	
 	
@@ -34,10 +34,10 @@ public class Chassis extends Subsystem
 		setDefaultCommand(new DriveWithJoystick());
 		
 		//Initial value
-		//Made to change our Deadzone values in dashboard
+		//Made to change our deadzone values in dashboard
 		SmartDashboard.putNumber("Deadzone", .01);
 		
-		//the Intial value of the encoders we put to the dashboard
+		//the initial value of the encoders we put to the dashboard
 		SmartDashboard.putNumber("VelocityLeft", motorChassisLeft.getEncVelocity());
 		SmartDashboard.putNumber("VelocityRight", motorChassisRight.getEncVelocity());
 	}
@@ -47,7 +47,7 @@ public class Chassis extends Subsystem
 	private double joystickAdjust(double value, double deadzone)
 	{
 		double temp;
-		
+		// Value is the value from the joystick, deadzone is self-explanatory
 		// Squaring and deadzones for cartesian (X, Y, and Twist(Z) value
 				if(value > deadzone)
 				{
@@ -62,26 +62,23 @@ public class Chassis extends Subsystem
 					temp = 0;
 				}
 		//Putting Deadzone values to dashboard from equation
-		SmartDashboard.putNumber("Deadzone_Auto", deadzone);
-		SmartDashboard.putNumber("Value_Auto", value);
+		SmartDashboard.putNumber("DeadzoneAdjust", deadzone);
+		SmartDashboard.putNumber("JoystickAdjust", value);
 		return temp;
 	}
 	
 	
-	public void driveWithJoystick(Joystick joystickP0){
+	public void driveWithJoystick(Joystick joystickP0)
+	{
 		//calling the deadzone a double, done to change value in dashboard
-		double deadzone = SmartDashboard.getNumber("Deadzone");
-		SmartDashboard.putNumber("Deadzone Manual", deadzone);
-
-		//deadzone = .015; // amount of deadspace around center
-		double y;
-		double twist;
+		double deadzone = SmartDashboard.getNumber("DeadzoneManualChange");
+		SmartDashboard.putNumber("DeadzoneCheck", deadzone);
 		
 		// Get simple values from joystick
-		twist = joystickP0.getTwist(); //z-axis check joysticks
+		double twist = joystickP0.getTwist(); //z-axis check joysticks
 		
 		// Get values from joystick, square, and apply deadzone
-		y = joystickAdjust(joystickP0.getY(), deadzone);
+		double y = joystickAdjust(joystickP0.getY(), deadzone);
 
 		// Adjusting for variables
 		twist = twist/1.25;
@@ -106,20 +103,20 @@ public class Chassis extends Subsystem
 		
 		
 		//here we are stating that we have to use button 3 in order to use encoders to set the speed of the wheels
-		//BE CAREFUL USING BUTTON 3!!
+		//BE CAREFUL USING BUTTON 10!!
 		//it swaps between our joystick drive and our encoder drive
-		if(joystickP0.getRawButton(3))
+		if(joystickP0.getRawButton(10))
 		{
 			motorChassisLeft.set(m012);
 			motorChassisRight.set(m014);
 		}
 		else if(OI.pMode == true)
 		{
-			drive.arcadeDrive(twist/1.5, y/1.5);
+			chassisDrive.arcadeDrive(twist/1.5, y/1.5);
 		}
 		else
 		{
-			drive.arcadeDrive(twist, y);
+			chassisDrive.arcadeDrive(twist, y);
 		}
 		
 		SmartDashboard.putNumber("JoystickY", y);
