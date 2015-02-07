@@ -82,7 +82,8 @@ public class Chassis extends Subsystem
 		double twist = joystickP0.getTwist(); //z-axis check joysticks
 		
 		// Get values from joystick, square, and apply deadzone
-		double y = joystickAdjust(joystickP0.getY(), deadzone);
+		double y = joystickP0.getY();
+		//double y = joystickAdjust(joystickP0.getY(), deadzone);
 		y = ThrottleLookup.calcJoystickCorrection(1, y);
 
 		// Adjusting for variables
