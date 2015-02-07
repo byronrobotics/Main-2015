@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4859.robot.commands;
 
 import org.usfirst.frc.team4859.robot.Robot;
+import org.usfirst.frc.team4859.robot.subsystems.Lifter;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -26,7 +27,7 @@ public class LiftUp extends Command
 	
 	protected boolean isFinished()
 	{
-		return false;
+		return Lifter.isSwitchSet();
 	}
 
 	
@@ -39,5 +40,5 @@ public class LiftUp extends Command
 	protected void interrupted()
 	{
 		end();
-	}
+	}	
 }
