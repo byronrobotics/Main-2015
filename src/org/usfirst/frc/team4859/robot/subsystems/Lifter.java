@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DigitalInput;
 
-// The lifing mecanism contorll 
+// The lifing mecanism  control
 public class Lifter extends Subsystem
 {	
 	CANTalon motorLifterLeft = new CANTalon(13);
