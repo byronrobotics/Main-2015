@@ -25,6 +25,7 @@ public class LiftDown extends Command
 
 	
 	protected boolean isFinished(){
+		//limit switch stuff
 		return Lifter.isSwitchSet();
 	}
 
