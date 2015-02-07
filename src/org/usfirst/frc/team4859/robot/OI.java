@@ -46,8 +46,8 @@ public class OI {
 		precisionMode.toggleWhenPressed(new PrecisionMode());
 		intakeIn.whenPressed(new IntakeIn());
 		intakeOut.whenPressed(new IntakeOut());
-		liftDown.whenPressed(new LiftDown());
-		liftUp.whenPressed(new LiftUp());
+		liftDown.whileHeld(new LiftDown());
+		liftUp.whileHeld(new LiftUp());
 		
 		
 	}
