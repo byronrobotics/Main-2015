@@ -7,38 +7,33 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class LiftUp extends Command
 {
-	public LiftUp()
-	{
+	public LiftUp(){
 		requires(Robot.lifter);
 	}
 	
 	
-	protected void initialize()
-	{
+	protected void initialize(){
+		Lifter.initializeCounter();
 		Robot.lifter.liftUp();
 	}
 
 	
-	protected void execute()
-	{
+	protected void execute(){
 		
 	}
 
 	
-	protected boolean isFinished()
-	{
+	protected boolean isFinished(){
 		return Lifter.isSwitchSet();
 	}
 
 	
-	protected void end()
-	{
+	protected void end(){
 		Robot.lifter.liftStop();
 	}
 
 	
-	protected void interrupted()
-	{
+	protected void interrupted(){
 		end();
 	}	
 }

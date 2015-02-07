@@ -5,7 +5,6 @@ import org.usfirst.frc.team4859.robot.commands.IntakeOut;
 import org.usfirst.frc.team4859.robot.commands.LiftDown;
 import org.usfirst.frc.team4859.robot.commands.LiftUp;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;

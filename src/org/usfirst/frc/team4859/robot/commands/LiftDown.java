@@ -8,26 +8,23 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class LiftDown extends Command
 {
-	public LiftDown()
-	{
+	public LiftDown(){
 		requires(Robot.lifter);
 	}
 	
 	
-	protected void initialize()
-	{
+	protected void initialize(){
+		Lifter.initializeCounter();
 		Robot.lifter.liftDown();
 	}
 
 	
-	protected void execute()
-	{
+	protected void execute(){
 		 
 	}
 
 	
-	protected boolean isFinished()
-	{
+	protected boolean isFinished(){
 		return Lifter.isSwitchSet();
 	}
 

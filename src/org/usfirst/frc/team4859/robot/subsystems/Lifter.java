@@ -13,6 +13,7 @@ public class Lifter extends Subsystem
 	CANTalon motorLifterRight = new CANTalon(16);
 	static DigitalSource limitSwitch = new DigitalInput(1);
 	static Counter counter = new Counter(limitSwitch);
+
 		
 		public Lifter(){
 			super();
