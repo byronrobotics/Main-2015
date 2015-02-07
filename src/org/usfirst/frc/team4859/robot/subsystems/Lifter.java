@@ -6,10 +6,10 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DigitalInput;
 
-// The lifing mecanism  control
+// The lifting mechanism  control
 public class Lifter extends Subsystem
 {	
-	CANTalon motorLifterLeft = new CANTalon(13);
+	CANTalon motorLifterLeft = new CANTalon(12);
 	CANTalon motorLifterRight = new CANTalon(16);
 	static DigitalSource limitSwitch = new DigitalInput(16);
 
@@ -18,12 +18,14 @@ public class Lifter extends Subsystem
 			super();
 		}
 
-		public static boolean isSwitchSet() {
-			return false;
-	        
+		
+		public static DigitalSource isSwitchSet() {
+			return limitSwitch;
 	    }
-		protected void initDefaultCommand() {
-		}
+		
+		
+		protected void initDefaultCommand() {}
+		
 		
 		public void liftUp(){ // brings lift up du
 			//set motor speeds for when you call LiftUp
