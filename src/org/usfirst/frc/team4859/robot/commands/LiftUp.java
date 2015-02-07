@@ -14,7 +14,7 @@ public class LiftUp extends Command
 	
 	
 	protected void initialize() {
-		//Robot.lifter.liftUp();
+		Robot.lifter.liftUp();
 	}
 
 	

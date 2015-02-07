@@ -38,7 +38,7 @@ public class OI {
 	// Create liftDown button on joystickP0 for button 3
 	Button liftDown = new JoystickButton(joystickP0, 3);
 	
-	// Create liftUp button on joystickP0 for button 4
+	// Create liftUp button on joystickP0 for button 5
 	Button liftUp = new JoystickButton(joystickP0, 5);
 	
 	public OI()
