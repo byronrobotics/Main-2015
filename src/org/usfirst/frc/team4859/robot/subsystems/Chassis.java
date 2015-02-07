@@ -1,9 +1,10 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
 import org.usfirst.frc.team4859.robot.OI;
+import org.usfirst.frc.team4859.robot.RobotMap;
 import org.usfirst.frc.teams4859.robot.ThrottleLookup.ThrottleLookup;
-
 import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
+
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -13,8 +14,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Chassis extends Subsystem
 {
 	//Setting chassis motors to CANTalon IDs
-	static CANTalon motorChassisLeft = new CANTalon(12);
-	static CANTalon motorChassisRight = new CANTalon(14);
+	static CANTalon motorChassisLeft = new CANTalon(RobotMap.talonDevIDChassisLeft);
+	static CANTalon motorChassisRight = new CANTalon(RobotMap.talonDevIDChassisRight);
 	
 	//front is top of "U" back is bottom of "U"
 	// Creates robot drive configuration with a left and right motor
