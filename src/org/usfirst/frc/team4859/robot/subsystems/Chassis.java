@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
 import org.usfirst.frc.team4859.robot.OI;
+import org.usfirst.frc.teams4859.robot.ThrottleLookup.ThrottleLookup;
+
 import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
@@ -80,7 +82,9 @@ public class Chassis extends Subsystem
 		double twist = joystickP0.getTwist(); //z-axis check joysticks
 		
 		// Get values from joystick, square, and apply deadzone
-		double y = joystickAdjust(joystickP0.getY(), deadzone);
+		double y = joystickP0.getY();
+		//double y = joystickAdjust(joystickP0.getY(), deadzone);
+		y = ThrottleLookup.calcJoystickCorrection(1, y);
 
 		// Adjusting for variables
 		twist = twist/1.25;
