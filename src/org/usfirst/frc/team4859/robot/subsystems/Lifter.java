@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
+import org.usfirst.frc.team4859.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalSource;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -9,8 +11,8 @@ import edu.wpi.first.wpilibj.DigitalInput;
 // The lifting mechanism  control
 public class Lifter extends Subsystem
 {	
-	CANTalon motorLifterLeft = new CANTalon(12);
-	CANTalon motorLifterRight = new CANTalon(16);
+	static CANTalon motorLifterLeft = new CANTalon(RobotMap.talonDevIDLifterLeft);
+	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight);
 	static DigitalSource limitSwitch = new DigitalInput(16);
 
 		

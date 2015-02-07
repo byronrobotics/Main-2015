@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
+import org.usfirst.frc.team4859.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 /*
@@ -10,18 +12,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Intake extends Subsystem
 {
 	//
-	CANTalon intakeMotorLeft;
-	CANTalon intakeMotorRight;
+	static CANTalon intakeMotorLeft = new CANTalon(RobotMap.talonDevIDIntakeLeft);
+	static CANTalon intakeMotorRight= new CANTalon(RobotMap.talonDevIDIntakeRight);;
 	//Declare motors here
 	public Intake()
 	{
 		super();
-
-		//calls new motor on the left of the robot
-		intakeMotorLeft = new CANTalon(11/*NOT CORRECT NEED TO CHANGE*/);
 		
-		//calls new motor on the right of the robot
-		intakeMotorRight = new CANTalon(13/*NOT CORRECT NEED TO CHANGE*/);
 	}
 
 	
