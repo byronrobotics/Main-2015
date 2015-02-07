@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4859.robot;
 
-import org.usfirst.frc.team4859.robot.commands.Autonomous;
+import org.usfirst.frc.team4859.robot.commands.autonomous.Autonomous;
 import org.usfirst.frc.team4859.robot.subsystems.Chassis;
 import org.usfirst.frc.team4859.robot.subsystems.Intake;
 import org.usfirst.frc.team4859.robot.subsystems.Lifter;
