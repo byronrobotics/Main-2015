@@ -71,8 +71,9 @@ public class Chassis extends Subsystem
 	public void driveWithJoystick(Joystick joystickP0)
 	{
 		//calling the deadzone a double, done to change value in dashboard
-		double deadzone = SmartDashboard.getNumber("DeadzoneManualChange");
-		SmartDashboard.putNumber("DeadzoneCheck", deadzone);
+		//double dz = SmartDashboard.getDouble("DeadzoneManualChange");
+		//SmartDashboard.putNumber("DeadzoneCheck", dz);
+		final double deadzone = 0.1;
 		
 		// Get simple values from joystick
 		double twist = joystickP0.getTwist(); //z-axis check joysticks

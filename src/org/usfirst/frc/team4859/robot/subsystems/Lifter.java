@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.DigitalInput;
 
 public class Lifter extends Subsystem
 {	
-	CANTalon motorLifterLeft = new CANTalon(12);
+	CANTalon motorLifterLeft = new CANTalon(16);
 	CANTalon motorLifterRight = new CANTalon(14);
 	static DigitalSource limitSwitch = new DigitalInput(16);
 	//Counter counter = new Counter(limitSwitch);
