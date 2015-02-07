@@ -28,8 +28,8 @@ public class Lifter extends Subsystem
 			//set motor speeds for when you call LiftUp
 			motorLifterLeft.set(0.25);
 			motorLifterRight.set(0.25);
-			SmartDashboard.putNumber("LiftMotor Speed", motorLifterLeft.getEncVelocity());
-			SmartDashboard.putNumber("LiftMotor Speed1", motorLifterRight.getEncVelocity());
+			SmartDashboard.putNumber("LiftMotor Left", motorLifterLeft.getEncVelocity());
+			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putBoolean("LiftDown", false);
 			SmartDashboard.putBoolean("LiftUp", true);
 
@@ -41,8 +41,8 @@ public class Lifter extends Subsystem
 			//set motor speeds for when you call LiftDown
 			motorLifterLeft.set(-0.25);
 			motorLifterRight.set(-0.25);
-			SmartDashboard.putNumber("LiftMotor Speed", motorLifterLeft.getEncVelocity());
-			SmartDashboard.putNumber("LiftMotor Speed1", motorLifterRight.getEncVelocity());
+			SmartDashboard.putNumber("LiftMotor Left", motorLifterLeft.getEncVelocity());
+			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putBoolean("LiftDown", true);
 			SmartDashboard.putBoolean("LiftUp", false);
 		}
@@ -53,5 +53,9 @@ public class Lifter extends Subsystem
 			//set motor speeds for when you call LiftStop
 			motorLifterLeft.set(0);
 			motorLifterRight.set(0);
+			SmartDashboard.putNumber("LiftMotor Left", motorLifterLeft.getEncVelocity());
+			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
+			SmartDashboard.putBoolean("LiftDown", false);
+			SmartDashboard.putBoolean("LiftUp", false);
 		}
 }
