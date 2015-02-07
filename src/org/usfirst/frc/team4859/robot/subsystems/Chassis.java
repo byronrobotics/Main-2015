@@ -123,5 +123,12 @@ public class Chassis extends Subsystem
 		SmartDashboard.putNumber("JoystickTwist", twist);
 		SmartDashboard.putBoolean("Precision Mode", OI.pMode);
 	}
+	public void DriveStraight(){
+		chassisDrive.arcadeDrive(.25,0);
+	}
+	public void DriveStop(){
+		chassisDrive.arcadeDrive(0,0);
+	}
+	
 	
 }
