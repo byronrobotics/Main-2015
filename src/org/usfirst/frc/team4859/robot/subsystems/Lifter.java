@@ -11,8 +11,6 @@ public class Lifter extends Subsystem
 	CANTalon motorLifterLeft = new CANTalon(13);
 	CANTalon motorLifterRight = new CANTalon(16);
 	static DigitalSource limitSwitch = new DigitalInput(16);
-	//static DigitalInput limitSwitch1 = new DigitalInput(16);
-	//static Counter counter = new Counter(limitSwitch);
 
 		
 		public Lifter(){
@@ -23,16 +21,10 @@ public class Lifter extends Subsystem
 			return false;
 	        
 	    }
-
-	    /*public static void initializeCounter() {
-	        counter.reset();
-	    }*/
-	    
-	    protected void initDefaultCommand() {
+		protected void initDefaultCommand() {
 		}
 		
-		public void liftUp()
-		{
+		public void liftUp(){
 			//set motor speeds for when you call LiftUp
 			motorLifterLeft.set(0.25);
 			motorLifterRight.set(0.25);
