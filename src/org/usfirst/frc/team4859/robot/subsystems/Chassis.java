@@ -73,9 +73,9 @@ public class Chassis extends Subsystem
 	public void driveWithJoystick(Joystick joystickP0)
 	{
 		//calling the deadzone a double, done to change value in dashboard
-		//double dz = SmartDashboard.getDouble("DeadzoneManualChange");
+		//double dz = SmartDashboard.getNumber("DeadzoneManualChange");
 		//SmartDashboard.putNumber("DeadzoneCheck", dz);
-		final double deadzone = 0.1;
+		final double deadzone = 0.01;
 
 		
 		// Get simple values from joystick
@@ -94,17 +94,17 @@ public class Chassis extends Subsystem
 		//we create a double m012 so we can get "Velocity" that value is then what we change in Dashboard to set the motor
 		//The put number EditV12 is our value to make sure on our dashboard that our new number is being read correctly
 		//Finally the V012 is our final read on what our Encoder is reading out
-		double m012 = SmartDashboard.getDouble("VelocityLeft");
-		SmartDashboard.putNumber("EditV12", m012);
-		SmartDashboard.putNumber("V012", motorChassisLeft.getEncVelocity());
+		double VelocityLeft = SmartDashboard.getDouble("VelocityLeft");
+		SmartDashboard.putNumber("VelocityLeftManualChange ", VelocityLeft);
+		SmartDashboard.putNumber("VelocityLeft", motorChassisLeft.getEncVelocity());
 
 		//m014 is CANTalon 14 encoder 
 		//we create a double m014 so we can get "Velocity1" that value is then what we change in Dashboard to set the motor
 		//The put number EditV14 is our value to make sure on our dashboard that our new number is being read correctly
 		//Finally the V014 is our final read on what our Encoder is reading out
-		double m014 = SmartDashboard.getDouble("VelocityRight");
-		SmartDashboard.putNumber("EditV14", m014);
-		SmartDashboard.putNumber("V014", motorChassisRight.getEncVelocity());
+		double VelocityRight = SmartDashboard.getDouble("VelocityRight");
+		SmartDashboard.putNumber("VelocityRightManualChange", VelocityRight);
+		SmartDashboard.putNumber("VelocityRight", motorChassisRight.getEncVelocity());
 		
 		
 		//here we are stating that we have to use button 3 in order to use encoders to set the speed of the wheels
@@ -112,16 +112,24 @@ public class Chassis extends Subsystem
 		//it swaps between our joystick drive and our encoder drive
 		if(joystickP0.getRawButton(10))
 		{
-			motorChassisLeft.set(m012);
-			motorChassisRight.set(m014);
+			motorChassisLeft.set(VelocityLeft);
+			motorChassisRight.set(VelocityRight);
+			SmartDashboard.putBoolean("Good", false);
+			SmartDashboard.putBoolean("Slow", false);
+			SmartDashboard.putBoolean("Death", true);
 		}
 		else if(OI.pMode == true)
 		{
 			chassisDrive.arcadeDrive(twist/1.5, y/1.5);
-		}
+			SmartDashboard.putBoolean("Good", false);
+			SmartDashboard.putBoolean("Slow", true);
+			SmartDashboard.putBoolean("Death", false);		}
 		else
 		{
 			chassisDrive.arcadeDrive(twist, y);
+			SmartDashboard.putBoolean("Good", true);
+			SmartDashboard.putBoolean("Slow", false);
+			SmartDashboard.putBoolean("Death", false);
 		}
 		
 		SmartDashboard.putNumber("JoystickY", y);

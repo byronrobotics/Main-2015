@@ -16,15 +16,18 @@ public class Intake extends Subsystem
 	public Intake()
 	{
 		super();
-		//# is writtn on the bottom of the CANTalons in black sharpie
+
 		//calls new motor on the left of the robot
 		intakeMotorLeft = new CANTalon(11/*NOT CORRECT NEED TO CHANGE*/);
+		
 		//calls new motor on the right of the robot
 		intakeMotorRight = new CANTalon(13/*NOT CORRECT NEED TO CHANGE*/);
 	}
 
 	
-	protected void initDefaultCommand() {}
+	protected void initDefaultCommand() {
+		
+	}
 	
 	
 	public void intakeIn()
@@ -32,6 +35,8 @@ public class Intake extends Subsystem
 		//set motor speeds for when you call IntakeIn
 		intakeMotorLeft.set(.25/*SPEED MAY HAVE TO BE CHANGED HIGHER OR LOWER OR TO A NEGATIVE*/);
 		intakeMotorRight.set(.25/*SPEED MAY HAVE TO BE CHANGED TO A HIGHER, LOWER OR TO A NEGATIVE*/);
+		SmartDashboard.putNumber("IntakeMotor Left", intakeMotorLeft.getEncVelocity());
+		SmartDashboard.putNumber("IntakeMotor Right", intakeMotorRight.getEncVelocity());
 		SmartDashboard.putBoolean("intakeOut", false);
 		SmartDashboard.putBoolean("intakeIn", true);
 
@@ -43,6 +48,8 @@ public class Intake extends Subsystem
 		//set motor speeds for when you call IntakeOut
 		intakeMotorLeft.set(-.25/*SPEED MAY HAVE TO BE CHANGED TO A HIGHER,LOWER OR POSITIVE NUMBER*/);
 		intakeMotorRight.set(-.25/*SPEED MAY HAVE TO BE CHANGED TO A HIGHER,LOWER OR POSITIVE NUMBER*/);
+		SmartDashboard.putNumber("IntakeMotor Left", intakeMotorLeft.getEncVelocity());
+		SmartDashboard.putNumber("IntakeMotor Right", intakeMotorRight.getEncVelocity());
 		SmartDashboard.putBoolean("intakeOut", true);
 		SmartDashboard.putBoolean("intakeIn", false);
 	}
@@ -53,5 +60,9 @@ public class Intake extends Subsystem
 		//set motor speeds for when you call IntakeStop
 		intakeMotorLeft.set(0.0/*SOMEONE MAY NEED TO CHANGE THIS*/);
 		intakeMotorRight.set(0.0/*SOMEONE MAY NEED TO CHANGE THIS ALSO*/);
+		SmartDashboard.putNumber("IntakeMotor Left", intakeMotorLeft.getEncVelocity());
+		SmartDashboard.putNumber("IntakeMotor Right", intakeMotorRight.getEncVelocity());
+		SmartDashboard.putBoolean("intakeOut", false);
+		SmartDashboard.putBoolean("intakeIn", false);
 	}
 }

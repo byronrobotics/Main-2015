@@ -2,7 +2,7 @@ package org.usfirst.frc.team4859.robot.commands;
 
 import org.usfirst.frc.team4859.robot.Robot;
 import org.usfirst.frc.team4859.robot.subsystems.Lifter;
-
+//the lift up commands
 import edu.wpi.first.wpilibj.command.Command;
 
 public class LiftUp extends Command
@@ -13,7 +13,6 @@ public class LiftUp extends Command
 	
 	
 	protected void initialize(){
-		Lifter.initializeCounter();
 		Robot.lifter.liftUp();
 	}
 
