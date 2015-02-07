@@ -25,7 +25,7 @@ public class LiftStop extends Command
 
 	
 	protected boolean isFinished(){
-		return Lifter.isSwitchSet();
+		return false;
 	}
 
 	

@@ -17,11 +17,6 @@ public class Lifter extends Subsystem
 		public Lifter(){
 			super();
 		}
-
-		
-		public static DigitalSource isSwitchSet() {
-			return limitSwitch;
-	    }
 		
 		
 		protected void initDefaultCommand() {}

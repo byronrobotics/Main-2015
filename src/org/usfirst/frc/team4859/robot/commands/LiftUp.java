@@ -13,32 +13,27 @@ public class LiftUp extends Command
 	}
 	
 	
-	protected void initialize()
-	{
+	protected void initialize() {
 		Robot.lifter.liftUp();
 	}
 
 	
-	protected void execute()
-	{
+	protected void execute() {
 		
 	}
 
 	
-	protected boolean isFinished()
-	{
-		return Lifter.isSwitchSet();
+	protected boolean isFinished() {
+		return false;
 	}
 
 	
-	protected void end()
-	{
+	protected void end() {
 		Robot.lifter.liftStop();
 	}
 
 	
-	protected void interrupted()
-	{
+	protected void interrupted() {
 		end();
 	}	
 }
