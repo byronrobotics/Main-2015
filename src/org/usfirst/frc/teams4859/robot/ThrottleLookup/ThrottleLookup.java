@@ -65,7 +65,7 @@ public class ThrottleLookup
 		}
 		
 		if (isNegative)
-			returnValue = -returnValue;
+			x = -x;
 		
 		return returnValue;
 	}
