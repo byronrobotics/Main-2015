@@ -5,10 +5,11 @@ import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DigitalInput;
+
 public class Lifter extends Subsystem
 {	
-	CANTalon motorLifterLeft = new CANTalon(0/*Put CANTalon ID here*/);
-	CANTalon motorLifterRight = new CANTalon(0/*Put CANTalon ID here*/);
+	CANTalon motorLifterLeft = new CANTalon(12);
+	CANTalon motorLifterRight = new CANTalon(14);
 	static DigitalInput limitSwitch = new DigitalInput(1);
 	//Counter counter = new Counter(limitSwitch);
 		
