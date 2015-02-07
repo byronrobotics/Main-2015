@@ -13,7 +13,7 @@ public class LiftUp extends Command
 	
 	
 	protected void initialize(){
-		Lifter.initializeCounter();
+		//Lifter.initializeCounter();
 		Robot.lifter.liftUp();
 	}
 

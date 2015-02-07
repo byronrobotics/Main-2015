@@ -14,7 +14,7 @@ public class LiftDown extends Command
 	
 	
 	protected void initialize(){
-		Lifter.initializeCounter();
+		//Lifter.initializeCounter();
 		Robot.lifter.liftDown();
 	}
 
