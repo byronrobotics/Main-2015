@@ -2,35 +2,33 @@ package org.usfirst.frc.team4859.robot.subsystems;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.DigitalSource;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DigitalInput;
 
 public class Lifter extends Subsystem
 {	
-	CANTalon motorLifterLeft = new CANTalon(12);
-	CANTalon motorLifterRight = new CANTalon(14);
-	static DigitalInput limitSwitch = new DigitalInput(1);
-	//Counter counter = new Counter(limitSwitch);
+	CANTalon motorLifterLeft = new CANTalon(13);
+	CANTalon motorLifterRight = new CANTalon(16);
+	static DigitalSource limitSwitch = new DigitalInput(1);
+	static Counter counter = new Counter(limitSwitch);
 		
-		public Lifter()
-		{
+		public Lifter(){
 			super();
 		}
 
-		
-		protected void initDefaultCommand() {
+		public static boolean isSwitchSet() {
+	        return counter.get() > 0;
+	    }
+
+	    public static void initializeCounter() {
+	        counter.reset();
+	    }
+	    
+	    protected void initDefaultCommand() {
 			
 		}
-		
-		 public static boolean isSwitchSet() {
-		        return limitSwitch != null;
-		    }
-
-		   // public void initializeCounter() {
-		   //     counter.reset();
-		   // }
-
 		
 		public void liftUp()
 		{

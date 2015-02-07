@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4859.robot;
 
-import org.usfirst.frc.team4859.pneumatics.Outp1;
 import org.usfirst.frc.team4859.robot.commands.IntakeIn;
 import org.usfirst.frc.team4859.robot.commands.IntakeOut;
 import org.usfirst.frc.team4859.robot.commands.LiftDown;

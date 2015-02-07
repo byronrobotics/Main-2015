@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Chassis extends Subsystem
 {
 	//Setting chassis motors to CANTalon IDs
-	static CANTalon motorChassisLeft = new CANTalon(13);
+	static CANTalon motorChassisLeft = new CANTalon(12);
 	static CANTalon motorChassisRight = new CANTalon(14);
 	
 	//front is top of "U" back is bottom of "U"
@@ -71,8 +71,9 @@ public class Chassis extends Subsystem
 	public void driveWithJoystick(Joystick joystickP0)
 	{
 		//calling the deadzone a double, done to change value in dashboard
-		double deadzone = SmartDashboard.getNumber("DeadzoneManualChange");
-		SmartDashboard.putNumber("DeadzoneCheck", deadzone);
+		/*double deadzone = SmartDashboard.getDouble("DeadzoneManualChange");
+		SmartDashboard.putNumber("DeadzoneCheck", deadzone);*/
+		final double deadzone = 0.01;
 		
 		// Get simple values from joystick
 		double twist = joystickP0.getTwist(); //z-axis check joysticks
