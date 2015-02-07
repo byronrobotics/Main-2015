@@ -6,6 +6,8 @@ import org.usfirst.frc.team4859.robot.subsystems.Lifter;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+//The lift down command.
+
 public class LiftDown extends Command
 {
 	public LiftDown(){
@@ -14,7 +16,7 @@ public class LiftDown extends Command
 	
 	
 	protected void initialize(){
-		//Lifter.initializeCounter();
+		
 		Robot.lifter.liftDown();
 	}
 

@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DigitalInput;
 
+// The lifing mecanism contorll 
 public class Lifter extends Subsystem
 {	
 	CANTalon motorLifterLeft = new CANTalon(13);
@@ -24,7 +25,7 @@ public class Lifter extends Subsystem
 		protected void initDefaultCommand() {
 		}
 		
-		public void liftUp(){
+		public void liftUp(){ // brings lift up du
 			//set motor speeds for when you call LiftUp
 			motorLifterLeft.set(0.25);
 			motorLifterRight.set(0.25);
@@ -36,7 +37,7 @@ public class Lifter extends Subsystem
 		}
 		
 		
-		public void liftDown()
+		public void liftDown() //brings lift down du.
 		{
 			//set motor speeds for when you call LiftDown
 			motorLifterLeft.set(-0.25);
@@ -48,7 +49,7 @@ public class Lifter extends Subsystem
 		}
 		
 		
-		public void liftStop()
+		public void liftStop() //stops lift motors du
 		{
 			//set motor speeds for when you call LiftStop
 			motorLifterLeft.set(0);
