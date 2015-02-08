@@ -5,6 +5,9 @@ import org.usfirst.frc.team4859.robot.commands.IntakeOut;
 import org.usfirst.frc.team4859.robot.commands.LiftDown;
 import org.usfirst.frc.team4859.robot.commands.LiftUp;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
+import org.usfirst.frc.team4859.robot.commands.PrecisionOff;
+import org.usfirst.frc.team4859.robot.commands.PrecisionOn;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -16,9 +19,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 
 public class OI {
-	
-	double[][] joystickCorrectionTable = new double[2][4];
-	
 	//Button 10 Taken in Chassis for Encoders
 	
 	// Define a joystick on port 0
@@ -26,14 +26,8 @@ public class OI {
 	
 	Button precisionMode = new JoystickButton(joystickP0, 8);
 
-	// Create precision mode button on for button 8
-	public static boolean pMode = false;
-	
-	// Create intake in button on joystickP0 for button 1
-	Button intakeIn = new JoystickButton(joystickP0,1);
-	
 	// Create intakeOut button on joystickP0 for button 2
-	Button intakeOut = new JoystickButton(joystickP0,2);
+	Button precisionMode1 = new JoystickButton(joystickP0, 2);
 	
 	// Create liftDown button on joystickP0 for button 3
 	Button liftDown = new JoystickButton(joystickP0, 3);
@@ -42,14 +36,14 @@ public class OI {
 	Button liftUp = new JoystickButton(joystickP0, 4);
 	
 	public OI()
+	
 	{
-		precisionMode.toggleWhenPressed(new PrecisionMode());
-		intakeIn.whenPressed(new IntakeIn());
-		intakeOut.whenPressed(new IntakeOut());
+		precisionMode.whenPressed(new PrecisionMode());
+		//intakeIn.whenPressed(new IntakeIn());
+		precisionMode1.whenPressed(new PrecisionOn());
+		precisionMode1.whenReleased(new PrecisionOff());
 		liftDown.whenPressed(new LiftDown());
 		liftUp.whenPressed(new LiftUp());
-		
-		
 	}
 	
 	

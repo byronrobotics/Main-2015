@@ -1,14 +1,15 @@
 package org.usfirst.frc.team4859.robot.commands;
 
-import org.usfirst.frc.team4859.robot.OI;
+import org.usfirst.frc.team4859.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 
 public class PrecisionMode extends Command
 {
 	protected void initialize()
 	{
-		OI.pMode = true;
+		RobotMap.pMode = true;
 	}
 	
 	protected void execute(){}
@@ -20,7 +21,7 @@ public class PrecisionMode extends Command
 	
 	protected void end()
 	{
-		OI.pMode = false;
+		RobotMap.pMode = false;
 	}
 	
 	protected void interrupted()

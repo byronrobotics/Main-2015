@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
-import org.usfirst.frc.team4859.robot.OI;
 import org.usfirst.frc.team4859.robot.RobotMap;
 import org.usfirst.frc.teams4859.robot.ThrottleLookup.ThrottleLookup;
 import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
@@ -84,14 +83,16 @@ public class Chassis extends Subsystem
 		
 		// Get values from joystick, square, and apply deadzone
 		double y = joystickP0.getY();
-		//double y = joystickAdjust(joystickP0.getY(), deadzone);
-		y = ThrottleLookup.calcJoystickCorrection(1, y);
+		if (RobotMap.pMode)
+			y = ThrottleLookup.calcJoystickCorrection(1, y);
+		else
+			y = ThrottleLookup.calcJoystickCorrection(2, y);
 
 		// Adjusting for variables
 		twist = twist/1.25;
 		y = -y;
 		
-		
+		SmartDashboard.putBoolean("Precise", RobotMap.pMode);
 		//m012 is CANTalon 12 encoder 
 		//we create a double m012 so we can get "Velocity" that value is then what we change in Dashboard to set the motor
 		//The put number EditV12 is our value to make sure on our dashboard that our new number is being read correctly
@@ -120,9 +121,9 @@ public class Chassis extends Subsystem
 			SmartDashboard.putBoolean("Slow", false);
 			SmartDashboard.putBoolean("Death", true);
 		}
-		else if(OI.pMode == true)
+		else if(RobotMap.pMode == true)
 		{
-			chassisDrive.arcadeDrive(twist/1.5, y/1.5);
+			chassisDrive.arcadeDrive(twist, y);
 			SmartDashboard.putBoolean("Good", false);
 			SmartDashboard.putBoolean("Slow", true);
 			SmartDashboard.putBoolean("Death", false);		}
@@ -136,7 +137,7 @@ public class Chassis extends Subsystem
 		
 		SmartDashboard.putNumber("JoystickY", y);
 		SmartDashboard.putNumber("JoystickTwist", twist);
-		SmartDashboard.putBoolean("Precision Mode", OI.pMode);
+		SmartDashboard.putBoolean("Precision Mode", RobotMap.pMode);
 	}
 	public void DriveStraight(){
 		chassisDrive.arcadeDrive(.25,0);

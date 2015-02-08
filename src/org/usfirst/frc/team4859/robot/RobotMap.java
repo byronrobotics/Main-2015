@@ -22,5 +22,9 @@ public class RobotMap {
 	public static int  talonDevIDLifterLeft = 15;
 	public static int  talonDevIDLifterRight =  16;
 	
+	// Create precision mode button on for button 8
+	public static boolean pMode = false;
+	
+
 	
 }
