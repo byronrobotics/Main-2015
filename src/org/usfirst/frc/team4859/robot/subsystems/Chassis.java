@@ -16,11 +16,16 @@ public class Chassis extends Subsystem
 	//Setting chassis motors to CANTalon IDs
 	static CANTalon motorChassisLeft = new CANTalon(RobotMap.talonDevIDChassisLeft);
 	static CANTalon motorChassisRight = new CANTalon(RobotMap.talonDevIDChassisRight);
-	
+
 	//front is top of "U" back is bottom of "U"
 	// Creates robot drive configuration with a left and right motor
 	static RobotDrive chassisDrive = new RobotDrive(motorChassisLeft, motorChassisRight);
-
+	
+//
+//	//100 to 360 cycles per revolution (CPR)
+//	//400 to 1440 pulses per revolution (PPR)
+//	static Encoder encChassisLeft = new Encoder(16,16, false, Encoder.EncodingType.k4X);
+//	static Encoder encChassisRight = new Encoder(16,16, false, Encoder.EncodingType.k4X);
 	
 	public Chassis()
 	{
@@ -43,6 +48,8 @@ public class Chassis extends Subsystem
 		//the initial value of the encoders we put to the dashboard
 		SmartDashboard.putNumber("VelocityLeft", motorChassisLeft.getEncVelocity());
 		SmartDashboard.putNumber("VelocityRight", motorChassisRight.getEncVelocity());
+		motorChassisLeft.setPosition(0);
+		motorChassisLeft.getEncPosition();
 	}
 	
 	
@@ -99,7 +106,7 @@ public class Chassis extends Subsystem
 		double VelocityLeft = SmartDashboard.getDouble("VelocityLeft");
 		SmartDashboard.putNumber("VelocityLeftManualChange ", VelocityLeft);
 		SmartDashboard.putNumber("VelocityLeft", motorChassisLeft.getEncVelocity());
-
+		
 		//m014 is CANTalon 14 encoder 
 		//we create a double m014 so we can get "Velocity1" that value is then what we change in Dashboard to set the motor
 		//The put number EditV14 is our value to make sure on our dashboard that our new number is being read correctly
@@ -137,6 +144,14 @@ public class Chassis extends Subsystem
 		SmartDashboard.putNumber("JoystickY", y);
 		SmartDashboard.putNumber("JoystickTwist", twist);
 		SmartDashboard.putBoolean("Precision Mode", OI.pMode);
+		//100 to 360 cycles per revolution (CPR)
+		//400 to 1440 pulses per revolution (PPR)
+		motorChassisLeft.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
+		motorChassisRight.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
+		
+		SmartDashboard.putNumber("encChassisLeftPosition", motorChassisLeft.getEncPosition()*.0001*2.54);
+		SmartDashboard.putNumber("encChassisLeftspeed", motorChassisLeft.getSpeed()*.001);
+		
 	}
 	public void DriveStraight(){
 		chassisDrive.arcadeDrive(.25,0);
@@ -144,9 +159,17 @@ public class Chassis extends Subsystem
 	public void DriveStop(){
 		chassisDrive.arcadeDrive(0,0);
 	}
-	public void Turbo(){
-		
-	}
+//	public void Encoder(){
+//		//100 to 360 cycles per revolution (CPR)
+//		//400 to 1440 pulses per revolution (PPR)
+//		motorChassisLeft.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
+//		motorChassisRight.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
+//		
+//		SmartDashboard.putNumber("encChassisLeftPosition", motorChassisLeft.getEncPosition());
+//		SmartDashboard.putNumber("encChassisLeftspeed", motorChassisLeft.getSpeed());
+//		
+//	
+//	}
 	
 	
 }
