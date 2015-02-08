@@ -144,6 +144,9 @@ public class Chassis extends Subsystem
 	public void DriveStop(){
 		chassisDrive.arcadeDrive(0,0);
 	}
+	public void Turbo(){
+		
+	}
 	
 	
 }
