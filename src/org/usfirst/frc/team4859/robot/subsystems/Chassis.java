@@ -52,39 +52,8 @@ public class Chassis extends Subsystem
 	}
 	
 	
-	// Utility function to adjust joystick coordinates
-	private double joystickAdjust(double value, double deadzone)
-	{
-		double temp;
-		// Value is the value from the joystick, deadzone is self-explanatory
-		// Squaring and deadzones for cartesian (X, Y, and Twist(Z) value
-				if(value > deadzone)
-				{
-					temp = value*value;
-				}
-				else if(value < -deadzone)
-				{
-					temp = -value*value;
-				}
-				else
-				{
-					temp = 0;
-				}
-		//Putting Deadzone values to dashboard from equation
-		SmartDashboard.putNumber("DeadzoneAdjust", deadzone);
-		SmartDashboard.putNumber("JoystickAdjust", value);
-		return temp;
-	}
-	
-	
 	public void driveWithJoystick(Joystick joystickP0)
 	{
-		//calling the deadzone a double, done to change value in dashboard
-		//double dz = SmartDashboard.getNumber("DeadzoneManualChange");
-		//SmartDashboard.putNumber("DeadzoneCheck", dz);
-		final double deadzone = 0.01;
-
-		
 		// Get simple values from joystick
 		double twist = joystickP0.getTwist(); //z-axis check joysticks
 		
