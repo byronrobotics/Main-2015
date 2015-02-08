@@ -150,10 +150,7 @@ public class Chassis extends Subsystem
 		SmartDashboard.putBoolean("Precision Mode", OI.pMode);
 		//100 to 360 cycles per revolution (CPR)
 		//400 to 1440 pulses per revolution (PPR)
-		motorChassisLeft.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
-		motorChassisRight.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
-		
-		SmartDashboard.putNumber("encChassisLeftPosition", motorChassisLeft.getEncPosition()*.0001*2.54);
+		SmartDashboard.putNumber("encChassisLeftPosition", motorChassisLeft.getEncPosition()*.0001);
 		SmartDashboard.putNumber("encChassisLeftspeed", motorChassisLeft.getSpeed()*.001);
 		
 >>>>>>> origin/master
