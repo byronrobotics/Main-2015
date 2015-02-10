@@ -1,5 +1,11 @@
 package org.usfirst.frc.team4859.robot;
 
+import org.usfirst.frc.team4859.robot.autonomous.AutoStartLeftCan;
+import org.usfirst.frc.team4859.robot.autonomous.AutoStartLeftTote;
+import org.usfirst.frc.team4859.robot.autonomous.AutoStartMidCan;
+import org.usfirst.frc.team4859.robot.autonomous.AutoStartMidTote;
+import org.usfirst.frc.team4859.robot.autonomous.AutoStartRightCan;
+import org.usfirst.frc.team4859.robot.autonomous.AutoStartRightTote;
 import org.usfirst.frc.team4859.robot.autonomous.Autonomous;
 import org.usfirst.frc.team4859.robot.subsystems.Chassis;
 import org.usfirst.frc.team4859.robot.subsystems.Intake;
@@ -9,6 +15,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 public class Robot extends IterativeRobot
@@ -20,7 +28,7 @@ public class Robot extends IterativeRobot
 	public static OI oi;
 
     Command autonomousCommand;
-
+    SendableChooser autonomousChooser;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -32,6 +40,15 @@ public class Robot extends IterativeRobot
     	intake = new Intake();
     	lifter = new Lifter();
 		oi = new OI();
+		
+		autonomousChooser = new SendableChooser();
+		autonomousChooser.addDefault("Start Left Get Tote", new AutoStartLeftTote());
+		autonomousChooser.addDefault("Start Mid Get Tote", new AutoStartMidTote());
+		autonomousChooser.addDefault("Start Right Get Tote", new AutoStartRightTote());
+		autonomousChooser.addDefault("Start Left Get Can", new AutoStartLeftCan());
+		autonomousChooser.addDefault("Start Mid Get Can", new AutoStartMidCan());
+		autonomousChooser.addDefault("Start Right Get Can", new AutoStartRightCan());
+		SmartDashboard.putData("Autonomous Mode Chooser", autonomousChooser);
 		
         // instantiate the command used for the autonomous period
         autonomousCommand = new Autonomous();
