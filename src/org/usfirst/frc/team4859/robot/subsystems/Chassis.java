@@ -144,10 +144,8 @@ public class Chassis extends Subsystem
 		
 		SmartDashboard.putNumber("JoystickY", y);
 		SmartDashboard.putNumber("JoystickTwist", twist);
-<<<<<<< HEAD
 		SmartDashboard.putBoolean("Precision Mode", RobotMap.pMode);
-=======
-		SmartDashboard.putBoolean("Precision Mode", OI.pMode);
+
 		//100 to 360 cycles per revolution (CPR)
 		//400 to 1440 pulses per revolution (PPR)
 		motorChassisLeft.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
@@ -156,7 +154,7 @@ public class Chassis extends Subsystem
 		SmartDashboard.putNumber("encChassisLeftPosition", motorChassisLeft.getEncPosition()*.0001*2.54);
 		SmartDashboard.putNumber("encChassisLeftspeed", motorChassisLeft.getSpeed()*.001);
 		
->>>>>>> origin/master
+s
 	}
 	public void DriveStraight(){
 		chassisDrive.arcadeDrive(.25,0);
