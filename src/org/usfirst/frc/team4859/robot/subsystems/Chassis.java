@@ -131,6 +131,20 @@ public class Chassis extends Subsystem
 	public void DriveStop(){
 		chassisDrive.arcadeDrive(0,0);
 	}
+	public static void Encoder(){
+		double encLeftPosition = motorChassisLeft.getEncPosition()*.0001*2.54;
+		double encRightPosition = motorChassisRight.getEncPosition()*.0001*2.54;
+		
+		double encLeftSpeed = motorChassisLeft.getSpeed()*.001;
+		double encRightSpeed = motorChassisRight.getSpeed()*.001;
+		
+		SmartDashboard.putNumber("encChassisLeftPosition", encLeftPosition);
+		SmartDashboard.putNumber("encChassisRightPosition", encRightPosition);
+		
+		SmartDashboard.putNumber("encChassisLeftSpeed", encLeftSpeed);
+		SmartDashboard.putNumber("encChassisRightSpeed", encRightSpeed);
+		
+	}
 //	public void Encoder(){
 //		//100 to 360 cycles per revolution (CPR)
 //		//400 to 1440 pulses per revolution (PPR)
