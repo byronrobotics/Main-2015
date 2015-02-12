@@ -4,16 +4,16 @@ public class ThrottleLookup
 {
 	
 
-
+	//slow
 	public static double[][] correctionTable1 = {
 		{.02, .30, .60, .90, 1.0},
 		{.00, .40, .80, .90, 1.0}};
-
+	//normal
 	public static double[][] correctionTable2 = {
 		{.02, .30, .60, .90, 1.0},
 		{.00, .20, .40, .90, 1.0}};
 
-	
+	//got to go fast
 	public static double[][] correctionTable3 = {
 		{.02, .30, .60, .90, 1.0},
 		{.00, .20, .30, .90, 1.0}};
