@@ -40,7 +40,7 @@ public class Chassis extends Subsystem
 	{
 		setDefaultCommand(new DriveWithJoystick());
 		
-		//Initial value
+		// Initial value
 		//Made to change our deadzone values in dashboard
 		SmartDashboard.putNumber("Deadzone", .01);
 		
