@@ -15,12 +15,11 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
-	public static int talonDevIDIntakeLeft = 11;
-	public static int talonDevIDChassisLeft = 12;
-	public static int  talonDevIDIntakeRight = 13;
-	public static int talonDevIDChassisRight = 14;
-	public static int  talonDevIDLifterLeft = 15;
-	public static int  talonDevIDLifterRight =  16;
+	public static int talonDevIDIntakeLeft = 10;
+	public static int talonDevIDChassisLeft = 15;
+	public static int  talonDevIDIntakeRight = 12;
+	public static int talonDevIDChassisRight = 11;
+	public static int  talonDevIDLifter =  13;
 	
 	// Create precision mode button on for button 8
 	public static boolean pMode = false;

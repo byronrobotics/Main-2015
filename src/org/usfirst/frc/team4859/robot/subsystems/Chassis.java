@@ -20,7 +20,6 @@ public class Chassis extends Subsystem
 	// Creates robot drive configuration with a left and right motor
 	static RobotDrive chassisDrive = new RobotDrive(motorChassisLeft, motorChassisRight);
 	
-//
 //	//100 to 360 cycles per revolution (CPR)
 //	//400 to 1440 pulses per revolution (PPR)
 //	static Encoder encChassisLeft = new Encoder(16,16, false, Encoder.EncodingType.k4X);
@@ -99,13 +98,13 @@ public class Chassis extends Subsystem
 		}
 		else if(RobotMap.pMode == true)
 		{
-			chassisDrive.arcadeDrive(twist, y);
+			chassisDrive.arcadeDrive(y, twist);
 			SmartDashboard.putBoolean("Good", false);
 			SmartDashboard.putBoolean("Slow", true);
 			SmartDashboard.putBoolean("Death", false);		}
 		else
 		{
-			chassisDrive.arcadeDrive(twist, y);
+			chassisDrive.arcadeDrive(y, twist);
 			SmartDashboard.putBoolean("Good", true);
 			SmartDashboard.putBoolean("Slow", false);
 			SmartDashboard.putBoolean("Death", false);

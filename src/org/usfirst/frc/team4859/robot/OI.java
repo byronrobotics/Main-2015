@@ -2,6 +2,7 @@ package org.usfirst.frc.team4859.robot;
 
 
 import org.usfirst.frc.team4859.robot.commands.LiftDown;
+import org.usfirst.frc.team4859.robot.commands.LiftStop;
 import org.usfirst.frc.team4859.robot.commands.LiftUp;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
 import org.usfirst.frc.team4859.robot.commands.PrecisionOff;
@@ -43,7 +44,9 @@ public class OI {
 		precisionMode1.whenPressed(new PrecisionOn());
 		precisionMode1.whenReleased(new PrecisionOff());
 		liftDown.whenPressed(new LiftDown());
+		liftDown.whenReleased(new LiftStop());
 		liftUp.whenPressed(new LiftUp());
+		liftUp.whenReleased(new LiftStop());
 	}
 	
 	
