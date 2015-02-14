@@ -123,8 +123,7 @@ public class Chassis extends Subsystem
 //		motorChassisRight.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
 //		
 //		SmartDashboard.putNumber("encChassisLeftPosition", motorChassisLeft.getEncPosition()*.0001*2.54);
-//		SmartDashboard.putNumber("encChassisLeftspeed", motorChassisLeft.getSpeed()*.001);
-//		if(photoSwitch.get()){	
+//		SmartDashboard.putNumber("encChassisLeftspeed", motorChassisLeft.getSpeed()*.001);	
 	}
 	public void DriveStraight(){
 		chassisDrive.arcadeDrive(.25,0);
