@@ -11,6 +11,7 @@ import org.usfirst.frc.team4859.robot.subsystems.Chassis;
 import org.usfirst.frc.team4859.robot.subsystems.Intake;
 import org.usfirst.frc.team4859.robot.subsystems.Lifter;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -48,6 +49,7 @@ public class Robot extends IterativeRobot
 		autonomousChooser.addDefault("Start Left Get Can", new AutoStartLeftCan());
 		autonomousChooser.addDefault("Start Mid Get Can", new AutoStartMidCan());
 		autonomousChooser.addDefault("Start Right Get Can", new AutoStartRightCan());
+		autonomousChooser.addDefault("Start Auto", new Autonomous());
 		SmartDashboard.putData("Autonomous Mode Chooser", autonomousChooser);
 		
         // instantiate the command used for the autonomous period

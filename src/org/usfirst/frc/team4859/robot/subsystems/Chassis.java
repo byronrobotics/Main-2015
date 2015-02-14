@@ -12,13 +12,15 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 	//thiss were stuff goes down
 public class Chassis extends Subsystem
 {
+	
 	//Setting chassis motors to CANTalon IDs
 	static CANTalon motorChassisLeft = new CANTalon(RobotMap.talonDevIDChassisLeft);
 	static CANTalon motorChassisRight = new CANTalon(RobotMap.talonDevIDChassisRight);
-
+	
 	//front is top of "U" back is bottom of "U"
 	// Creates robot drive configuration with a left and right motor
 	static RobotDrive chassisDrive = new RobotDrive(motorChassisLeft, motorChassisRight);
+	
 	
 //	//100 to 360 cycles per revolution (CPR)
 //	//400 to 1440 pulses per revolution (PPR)
@@ -122,7 +124,7 @@ public class Chassis extends Subsystem
 //		
 //		SmartDashboard.putNumber("encChassisLeftPosition", motorChassisLeft.getEncPosition()*.0001*2.54);
 //		SmartDashboard.putNumber("encChassisLeftspeed", motorChassisLeft.getSpeed()*.001);
-//		
+//		if(photoSwitch.get()){	
 	}
 	public void DriveStraight(){
 		chassisDrive.arcadeDrive(.25,0);
