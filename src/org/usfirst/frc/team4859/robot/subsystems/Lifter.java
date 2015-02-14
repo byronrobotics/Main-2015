@@ -50,7 +50,7 @@ public class Lifter extends Subsystem
 			SmartDashboard.putBoolean("LiftDown", false);
 			SmartDashboard.putBoolean("LiftUp", false);
 		}
-		public void liftauto()
+		public void liftAutoUp()
 		{
 			//set motor speeds for when you call LiftUp
 			if(photoSwitch.get() ==true){	
@@ -63,5 +63,20 @@ public class Lifter extends Subsystem
 					SmartDashboard.putString("LiftDown", "error-not-in");
 					SmartDashboard.putString("LiftUp", "error-not-in");
 				} 
+		}
+		public void liftAutoDown()
+		{
+			//set motor speeds for when you call LiftUp
+			if(photoSwitch.get() ==true){	
+					motorLifter.set(0.5);
+					SmartDashboard.putNumber("LiftMotor Right", motorLifter.getEncVelocity());
+					SmartDashboard.putBoolean("LiftDown", true);
+					SmartDashboard.putBoolean("LiftUp", false);
+//				} else if(limitSwitch.equals(limitSwitch) ==true){
+			}else {
+					motorLifter.set(0.0);
+					SmartDashboard.putString("LiftDown", "error-not-in");
+					SmartDashboard.putString("LiftUp", "error-not-in");
+			} 
 		}
 }
