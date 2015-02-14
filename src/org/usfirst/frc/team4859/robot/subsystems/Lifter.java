@@ -30,7 +30,6 @@ public class Lifter extends Subsystem
 			SmartDashboard.putNumber("LiftMotor Right", motorLifter.getEncVelocity());
 			SmartDashboard.putBoolean("LiftDown", false);
 			SmartDashboard.putBoolean("LiftUp", true);
-
 		}
 		
 		
