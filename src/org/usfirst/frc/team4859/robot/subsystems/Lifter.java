@@ -15,13 +15,15 @@ public class Lifter extends Subsystem
 {	
 	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight); //main
 	static CANTalon motorLifterLeft = new CANTalon(RobotMap.talonDevIDLifterLeft); //follower
-	static DigitalSource limitSwitch = new DigitalInput(16);
+	static DigitalSource limitSwitch = new DigitalInput(1);
 	static AnalogInput photoSwitch = new AnalogInput(0);
+	
 		
 		public Lifter(){
 			super();
 			motorLifterLeft.changeControlMode(ControlMode.Follower);
-			motorLifterLeft.set(16);
+			motorLifterLeft.enableLimitSwitch(true, true);
+			
 		}
 		
 		
