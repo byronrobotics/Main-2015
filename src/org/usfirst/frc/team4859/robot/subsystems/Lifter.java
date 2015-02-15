@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
 import edu.wpi.first.wpilibj.DigitalSource;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -13,11 +14,13 @@ import edu.wpi.first.wpilibj.DigitalInput;
 // The lifting mechanism  control
 public class Lifter extends Subsystem
 {	
+	
 	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight); //main
 	static CANTalon motorLifterLeft = new CANTalon(RobotMap.talonDevIDLifterLeft); //follower
 	static DigitalSource limitSwitch = new DigitalInput(1);
 	static AnalogInput photoSwitch = new AnalogInput(0);
-	
+	Joystick joystickP1 = new Joystick(1);
+	double y = joystickP1.getY();
 		
 		public Lifter(){
 			super();
@@ -26,7 +29,7 @@ public class Lifter extends Subsystem
 			motorLifterLeft.changeControlMode(ControlMode.Follower); //change left motor control mode to follower mode
 			motorLifterLeft.set(RobotMap.talonDevIDLifterRight); //tell the left motor to follow the right motor
 			motorLifterLeft.enableLimitSwitch(true, true);
-
+			
 		}
 		
 		
@@ -36,7 +39,7 @@ public class Lifter extends Subsystem
 		
 		public void liftUp(){ // brings lift up du
 			//set motor speeds for when you call LiftUp
-			motorLifterRight.set(-700);
+			motorLifterRight.set(-100);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putBoolean("LiftDown", false);
 			SmartDashboard.putBoolean("LiftUp", true);
@@ -46,7 +49,7 @@ public class Lifter extends Subsystem
 		public void liftDown() //brings lift down du.
 		{
 			//set motor speeds for when you call LiftDown
-				motorLifterRight.set(400);
+				motorLifterRight.set(50);
 				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 				SmartDashboard.putBoolean("LiftDown", true);
 				SmartDashboard.putBoolean("LiftUp", false);	
@@ -56,7 +59,8 @@ public class Lifter extends Subsystem
 		public void liftStop() //stops lift motors du
 		{
 			//set motor speeds for when you call LiftStop
-			motorLifterRight.set(0);			
+			motorLifterRight.set(0);
+			motorLifterRight.ClearIaccum();
 			SmartDashboard.putNumber("LiftMotor", motorLifterRight.getEncVelocity());
 			SmartDashboard.putBoolean("LiftDown", false);
 			SmartDashboard.putBoolean("LiftUp", false);
