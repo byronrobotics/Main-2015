@@ -25,17 +25,17 @@ public class OI {
 	// Define a joystick on port 0
 	Joystick joystickP0 = new Joystick(0);
 	// Define a joystick(xbox controller) on port 1
-	Joystick xboxP1 = new Joystick(1);
+	Joystick joystickP1 = new Joystick(1);
 	
 	Button precisionMode = new JoystickButton(joystickP0, 8);
 
 	// Create intakeOut button on joystickP0 for button 2
-	Button precisionMode1 = new JoystickButton(joystickP0, 2);
+	Button precisionMode1 = new JoystickButton(joystickP0, 9);
 	
 	// Create liftDown button on xboxP1 for button 6
-	Button liftDown = new JoystickButton(xboxP1, 6);
+	Button liftDown = new JoystickButton(joystickP1, 2);
 	// Create liftUp button on xboxP1 for button 5
-	Button liftUp = new JoystickButton(xboxP1, 5);
+	Button liftUp = new JoystickButton(joystickP1, 1);
 	
 	public OI()
 	
@@ -44,16 +44,20 @@ public class OI {
 		//intakeIn.whenPressed(new IntakeIn());
 		precisionMode1.whenPressed(new PrecisionOn());
 		precisionMode1.whenReleased(new PrecisionOff());
-		liftDown.whenPressed(new LiftDown());
-		liftDown.whenReleased(new LiftStop());
 		liftUp.whenPressed(new LiftUp());
 		liftUp.whenReleased(new LiftStop());
+		liftDown.whenPressed(new LiftDown());
+		liftDown.whenReleased(new LiftStop());
 	}
 	
 	
 	public Joystick getJoystick()
 	{
 		return joystickP0;
+	}
+	public Joystick getJoystick1()
+	{
+		return joystickP1;
 	}
 }
 

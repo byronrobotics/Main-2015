@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4859.robot;
 
+import org.usfirst.frc.team4859.robot.autonomous.AutoNothing;
 import org.usfirst.frc.team4859.robot.autonomous.AutoStartLeftCan;
 import org.usfirst.frc.team4859.robot.autonomous.AutoStartLeftTote;
 import org.usfirst.frc.team4859.robot.autonomous.AutoStartMidCan;
@@ -50,6 +51,7 @@ public class Robot extends IterativeRobot
 		autonomousChooser.addDefault("Start Mid Get Can", new AutoStartMidCan());
 		autonomousChooser.addDefault("Start Right Get Can", new AutoStartRightCan());
 		autonomousChooser.addDefault("Start Auto", new Autonomous());
+		autonomousChooser.addDefault("Start Nothing", new AutoNothing());
 		SmartDashboard.putData("Autonomous Mode Chooser", autonomousChooser);
 		
         // instantiate the command used for the autonomous period
