@@ -66,8 +66,8 @@ public class Chassis extends Subsystem
 			y = ThrottleLookup.calcJoystickCorrection(2, y);
 
 		// Adjusting for variables
-		twist = twist/1.25;
-		y = -y;
+		twist = -twist/1.25;
+		y = y;
 		
 		SmartDashboard.putBoolean("Precise", RobotMap.pMode);
 		//m012 is CANTalon 12 encoder 
