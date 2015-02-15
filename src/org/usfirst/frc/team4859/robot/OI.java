@@ -44,18 +44,21 @@ public class OI {
 		//intakeIn.whenPressed(new IntakeIn());
 		precisionMode1.whenPressed(new PrecisionOn());
 		precisionMode1.whenReleased(new PrecisionOff());
-		
-		liftUp.whenPressed(new LiftUp());
-		liftUp.whenReleased(new LiftStop());
-		
-		liftDown.whenPressed(new LiftDown());
-		liftDown.whenReleased(new LiftStop());
+//		liftUp.whenPressed(new LiftUp());
+//		liftUp.whenReleased(new LiftStop());
+//		
+//		liftDown.whenPressed(new LiftDown());
+//		liftDown.whenReleased(new LiftStop());
 	}
 	
 	
 	public Joystick getJoystick()
 	{
 		return joystickP0;
+	}
+	public Joystick getJoystick1()
+	{
+		return joystickP1;
 	}
 }
 

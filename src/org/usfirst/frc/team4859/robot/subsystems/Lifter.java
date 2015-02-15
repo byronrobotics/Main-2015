@@ -29,7 +29,7 @@ public class Lifter extends Subsystem
 			motorLifterLeft.changeControlMode(ControlMode.Follower); //change left motor control mode to follower mode
 			motorLifterLeft.set(RobotMap.talonDevIDLifterRight); //tell the left motor to follow the right motor
 			motorLifterLeft.enableLimitSwitch(true, true);
-			
+			SmartDashboard.putNumber("LiftUpSpeed", motorLifterRight.getSpeed());
 		}
 		
 		
@@ -39,20 +39,18 @@ public class Lifter extends Subsystem
 		
 		public void liftUp(){ // brings lift up du
 			//set motor speeds for when you call LiftUp
-			motorLifterRight.set(-100);
+			motorLifterRight.set(100);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-			SmartDashboard.putBoolean("LiftDown", false);
-			SmartDashboard.putBoolean("LiftUp", true);
+			SmartDashboard.putString("Lift", "Up");
 		}
 		
 		
 		public void liftDown() //brings lift down du.
 		{
 			//set motor speeds for when you call LiftDown
-				motorLifterRight.set(50);
+				motorLifterRight.set(-50);
 				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-				SmartDashboard.putBoolean("LiftDown", true);
-				SmartDashboard.putBoolean("LiftUp", false);	
+				SmartDashboard.putString("Lift", "Down");
 		}
 		
 		
@@ -61,9 +59,8 @@ public class Lifter extends Subsystem
 			//set motor speeds for when you call LiftStop
 			motorLifterRight.set(0);
 			motorLifterRight.ClearIaccum();
-			SmartDashboard.putNumber("LiftMotor", motorLifterRight.getEncVelocity());
-			SmartDashboard.putBoolean("LiftDown", false);
-			SmartDashboard.putBoolean("LiftUp", false);
+			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
+			SmartDashboard.putString("Lift", "Stopped");
 		}
 		public void liftAutoUp()
 		{
@@ -92,5 +89,27 @@ public class Lifter extends Subsystem
 					SmartDashboard.putString("LiftDown", "error-not-in");
 					SmartDashboard.putString("LiftUp", "error-not-in");
 			} 
+		}
+
+
+		public void Joysticklifter(Joystick joystickP1) {
+			
+			SmartDashboard.getNumber("LiftUpSpeed", motorLifterRight.getSpeed());
+			double a = SmartDashboard.getDouble("LiftUpSpeed");
+			SmartDashboard.putNumber("LiftUpSpeedCheck", a);
+			double b = y=a; 
+			//set motor speeds for when you call LiftUp
+			motorLifterRight.set(b);
+			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
+			SmartDashboard.putString("Lift", "Up");	
+			
+			SmartDashboard.getNumber("LiftUpSpeed", motorLifterRight.getSpeed());
+			double c = SmartDashboard.getDouble("LiftUpSpeed");
+			SmartDashboard.putNumber("LiftUpSpeedCheck", c);
+			double d = y=c; 
+			//set motor speeds for when you call LiftDown
+			motorLifterRight.set(d);
+			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
+			SmartDashboard.putString("Lift", "Down");
 		}
 }
