@@ -5,11 +5,9 @@ import org.usfirst.frc.team4859.robot.RobotMap;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
-import edu.wpi.first.wpilibj.DigitalSource;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.DigitalInput;
 
 // The lifting mechanism  control
 public class Lifter extends Subsystem
@@ -17,10 +15,7 @@ public class Lifter extends Subsystem
 	
 	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight); //main
 	static CANTalon motorLifterLeft = new CANTalon(RobotMap.talonDevIDLifterLeft); //follower
-	static DigitalSource limitSwitch = new DigitalInput(1);
 	static AnalogInput photoSwitch = new AnalogInput(0);
-	Joystick joystickP1 = new Joystick(1);
-	double y = joystickP1.getY();
 		
 		public Lifter(){
 			super();
@@ -68,12 +63,10 @@ public class Lifter extends Subsystem
 			if(photoSwitch.getVoltage() >10){	
 					motorLifterRight.set(-700);
 					SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-					SmartDashboard.putBoolean("LiftDown", false);
-					SmartDashboard.putBoolean("LiftUp", true);
+					SmartDashboard.putString("Lift", "UP");
 				} else {
 					motorLifterRight.set(0.0);
-					SmartDashboard.putString("LiftDown", "error-not-in");
-					SmartDashboard.putString("LiftUp", "error-not-in");
+					SmartDashboard.putString("Lift", "Error-Up");
 				} 
 		}
 		public void liftAutoDown()
@@ -82,34 +75,52 @@ public class Lifter extends Subsystem
 			if(photoSwitch.getVoltage() >10){	
 					motorLifterRight.set(400);
 					SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-					SmartDashboard.putBoolean("LiftDown", true);
-					SmartDashboard.putBoolean("LiftUp", false);
+					SmartDashboard.putString("Lift", "DOWN");
 			}else {
 					motorLifterRight.set(0.0);
-					SmartDashboard.putString("LiftDown", "error-not-in");
-					SmartDashboard.putString("LiftUp", "error-not-in");
+					SmartDashboard.putString("Lift", "Error-Down");
 			} 
 		}
 
-
+		//Made this to adjust the speed up and down from dashboard the values and to see the values
+		//Also made the Lift Up & Down by VIA the Second Joystick joystickP1 or in Port 1
 		public void Joysticklifter(Joystick joystickP1) {
+			double y = joystickP1.getY();
 			
-			SmartDashboard.getNumber("LiftUpSpeed", motorLifterRight.getSpeed());
+			//LIFT UP
+			//Viewing the value of the lift Speed
+			SmartDashboard.getNumber("LiftSpeed", motorLifterRight.getSpeed());
+			//Creating a double to adjust it from the dashboard 
 			double a = SmartDashboard.getDouble("LiftUpSpeed");
-			SmartDashboard.putNumber("LiftUpSpeedCheck", a);
-			double b = y=a; 
+			//Reading to see if the value is coming back correctly from the dashboard 
+			//for us to see
+			SmartDashboard.putNumber("LiftUpSpeedCheck-UP", a);
+			//making it so we can only go a speed of a that we set on the dashboard
+			double b = y=/*PLEASE LOOK INTO TO SEE WHAT THIS DOES*/a; 
+			
 			//set motor speeds for when you call LiftUp
 			motorLifterRight.set(b);
+			//Puting the lift Encoder Velocity to dashboard
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
+			//Stating the Position of the Lift STRING
 			SmartDashboard.putString("Lift", "Up");	
 			
-			SmartDashboard.getNumber("LiftUpSpeed", motorLifterRight.getSpeed());
-			double c = SmartDashboard.getDouble("LiftUpSpeed");
-			SmartDashboard.putNumber("LiftUpSpeedCheck", c);
-			double d = y=c; 
+			//LIFT DOWN
+			//Viewing the value of the lift Speed
+			SmartDashboard.getNumber("LiftSpeed", motorLifterRight.getSpeed());
+			//Creating a double to adjust it from the dashboard 
+			double c = SmartDashboard.getDouble("LiftDownSpeed");
+			//Reading to see if the value is coming back correctly from the dashboard 
+			//for us to see
+			SmartDashboard.putNumber("LiftUpSpeedCheck-DOWN", c);
+			//making it so we can only go a speed of a that we set on the dashboard
+			double d = y=/*PLEASE LOOK INTO TO SEE WHAT THIS DOES*/c;//LOOK INTO THIS 
+			
 			//set motor speeds for when you call LiftDown
 			motorLifterRight.set(d);
+			//Puting the lift Encoder Velocity to dashboard
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
+			//Stating the position of the Lift STRING
 			SmartDashboard.putString("Lift", "Down");
 		}
 }

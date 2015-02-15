@@ -30,12 +30,12 @@ public class OI {
 	Button precisionMode = new JoystickButton(joystickP0, 8);
 
 	// Create intakeOut button on joystickP0 for button 2
-	Button precisionMode1 = new JoystickButton(joystickP0, 2);
+	Button precisionMode1 = new JoystickButton(joystickP0, 9);
 	
 	// Create liftDown button on xboxP1 for button 6
-	Button liftDown = new JoystickButton(joystickP0, 3);
+	Button liftDown = new JoystickButton(joystickP1, 2);
 	// Create liftUp button on xboxP1 for button 5
-	Button liftUp = new JoystickButton(joystickP0, 4);
+	Button liftUp = new JoystickButton(joystickP1, 1);
 	
 	public OI()
 	
@@ -44,11 +44,10 @@ public class OI {
 		//intakeIn.whenPressed(new IntakeIn());
 		precisionMode1.whenPressed(new PrecisionOn());
 		precisionMode1.whenReleased(new PrecisionOff());
-//		liftUp.whenPressed(new LiftUp());
-//		liftUp.whenReleased(new LiftStop());
-//		
-//		liftDown.whenPressed(new LiftDown());
-//		liftDown.whenReleased(new LiftStop());
+		liftUp.whenPressed(new LiftUp());
+		liftUp.whenReleased(new LiftStop());
+		liftDown.whenPressed(new LiftDown());
+		liftDown.whenReleased(new LiftStop());
 	}
 	
 	
