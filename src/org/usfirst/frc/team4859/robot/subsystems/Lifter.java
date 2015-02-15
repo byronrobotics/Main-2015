@@ -36,7 +36,7 @@ public class Lifter extends Subsystem
 		
 		public void liftUp(){ // brings lift up du
 			//set motor speeds for when you call LiftUp
-			motorLifterRight.set(-1000);
+			motorLifterRight.set(-700);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putBoolean("LiftDown", false);
 			SmartDashboard.putBoolean("LiftUp", true);
@@ -46,7 +46,7 @@ public class Lifter extends Subsystem
 		public void liftDown() //brings lift down du.
 		{
 			//set motor speeds for when you call LiftDown
-				motorLifterRight.set(500);
+				motorLifterRight.set(400);
 				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 				SmartDashboard.putBoolean("LiftDown", true);
 				SmartDashboard.putBoolean("LiftUp", false);	
@@ -65,7 +65,7 @@ public class Lifter extends Subsystem
 		{
 			//set motor speeds for when you call LiftUp
 			if(photoSwitch.getVoltage() >10){	
-					motorLifterRight.set(-1.0);
+					motorLifterRight.set(-700);
 					SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 					SmartDashboard.putBoolean("LiftDown", false);
 					SmartDashboard.putBoolean("LiftUp", true);
@@ -79,7 +79,7 @@ public class Lifter extends Subsystem
 		{
 			//set motor speeds for when you call LiftUp
 			if(photoSwitch.getVoltage() >10){	
-					motorLifterRight.set(0.5);
+					motorLifterRight.set(400);
 					SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 					SmartDashboard.putBoolean("LiftDown", true);
 					SmartDashboard.putBoolean("LiftUp", false);
