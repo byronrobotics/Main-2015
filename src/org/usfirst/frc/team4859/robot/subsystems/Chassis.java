@@ -94,22 +94,18 @@ public class Chassis extends Subsystem
 		{
 			motorChassisLeft.set(VelocityLeft);
 			motorChassisRight.set(VelocityRight);
-			SmartDashboard.putBoolean("Good", false);
-			SmartDashboard.putBoolean("Slow", false);
-			SmartDashboard.putBoolean("Death", true);
+			SmartDashboard.putString("ROBOT MODE", "Death");
 		}
+		
+		//Are values supposed to not be divided by anything? Maybe change this  - Callum
 		else if(RobotMap.pMode == true)
 		{
 			chassisDrive.arcadeDrive(y, twist);
-			SmartDashboard.putBoolean("Good", false);
-			SmartDashboard.putBoolean("Slow", true);
-			SmartDashboard.putBoolean("Death", false);		}
+			SmartDashboard.putString("ROBOT MODE", "Slow");	}
 		else
 		{
 			chassisDrive.arcadeDrive(y, twist);
-			SmartDashboard.putBoolean("Good", true);
-			SmartDashboard.putBoolean("Slow", false);
-			SmartDashboard.putBoolean("Death", false);
+			SmartDashboard.putString("ROBOT MODE", "Normal");
 		}
 		
 		SmartDashboard.putNumber("JoystickY", y);
