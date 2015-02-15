@@ -22,6 +22,7 @@ public class LiftAutoUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.lifter.liftAutoUp();
     }
 
     // Make this return true when this Command no longer needs to run execute()

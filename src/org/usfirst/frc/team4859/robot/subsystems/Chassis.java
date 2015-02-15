@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 	//thiss were stuff goes down
 public class Chassis extends Subsystem
 {
-	
 	//Setting chassis motors to CANTalon IDs
 	static CANTalon motorChassisLeft = new CANTalon(RobotMap.talonDevIDChassisLeft);
 	static CANTalon motorChassisRight = new CANTalon(RobotMap.talonDevIDChassisRight);

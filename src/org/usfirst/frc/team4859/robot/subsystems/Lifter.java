@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalSource;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DigitalInput;
 
@@ -19,8 +18,10 @@ public class Lifter extends Subsystem
 	static CANTalon motorLifter = new CANTalon(RobotMap.talonDevIDLifter);
 	static DigitalSource limitSwitch = new DigitalInput(16);
 	static AnalogInput photoSwitch = new AnalogInput(0);
-		
-		public Lifter(){
+	double voltage = photoSwitch.getVoltage();
+	
+		public Lifter()
+		{
 			super();
 		}
 		
@@ -59,12 +60,12 @@ public class Lifter extends Subsystem
 		public void liftAutoUp()
 		{
 			//set motor speeds for when you call LiftUp
-			if(photoSwitch.getVoltage() >10){	
+			if((voltage <=5) && (voltage > 1 )){	
 					motorLifter.set(-1.0);
 					SmartDashboard.putNumber("LiftMotor Right", motorLifter.getEncVelocity());
 					SmartDashboard.putBoolean("LiftDown", false);
 					SmartDashboard.putBoolean("LiftUp", true);
-				} else {
+				} else if((voltage <=1) && (voltage > 0 )) {
 					motorLifter.set(0.0);
 					SmartDashboard.putString("LiftDown", "error-not-in");
 					SmartDashboard.putString("LiftUp", "error-not-in");
@@ -72,13 +73,14 @@ public class Lifter extends Subsystem
 		}
 		public void liftAutoDown()
 		{
+			
 			//set motor speeds for when you call LiftUp
-			if(photoSwitch.getVoltage() >10){	
+			if((voltage <=1) && (voltage > 0 )){	
 					motorLifter.set(0.5);
 					SmartDashboard.putNumber("LiftMotor Right", motorLifter.getEncVelocity());
 					SmartDashboard.putBoolean("LiftDown", true);
 					SmartDashboard.putBoolean("LiftUp", false);
-			}else {
+			}else if((voltage <=5) && (voltage > 1 )) {
 					motorLifter.set(0.0);
 					SmartDashboard.putString("LiftDown", "error-not-in");
 					SmartDashboard.putString("LiftUp", "error-not-in");
