@@ -56,17 +56,15 @@ public class Chassis extends Subsystem
 	public void driveWithJoystick(Joystick joystickP0)
 	{
 		// Get simple values from joystick
-		double twist = joystickP0.getTwist(); //z-axis check joysticks
-		
-		// Get values from joystick, square, and apply deadzone
+		double twist = joystickP0.getTwist();
 		double y = joystickP0.getY();
-		if (RobotMap.pMode)
+		
+		twist = -twist/1.25;
+		
+		if (RobotMap.pMode == true)
 			y = ThrottleLookup.calcJoystickCorrection(1, y);
 		else
 			y = ThrottleLookup.calcJoystickCorrection(2, y);
-
-		// Adjusting for variables
-		twist = -twist/1.25;
 		
 		SmartDashboard.putBoolean("Precise", RobotMap.pMode);
 		//m012 is CANTalon 12 encoder 
@@ -91,15 +89,15 @@ public class Chassis extends Subsystem
 		//it swaps between our joystick drive and our encoder drive
 
 
-		if(RobotMap.pMode == true)
-		{
-			chassisDrive.arcadeDrive(y/1.5, twist/1.25);
-			SmartDashboard.putString("ROBOT MODE", "Slow");	}
-		else
-		{
-			chassisDrive.arcadeDrive(y, twist);
-			SmartDashboard.putString("ROBOT MODE", "Normal");
-		}
+//		if(RobotMap.pMode == true)
+//		{
+//			chassisDrive.arcadeDrive(y/1.5, twist/1.25);
+//			SmartDashboard.putString("ROBOT MODE", "Slow");	}
+//		else
+//		{
+//			chassisDrive.arcadeDrive(y, twist);
+//			SmartDashboard.putString("ROBOT MODE", "Normal");
+//		}
 		
 		SmartDashboard.putNumber("JoystickY", y);
 		SmartDashboard.putNumber("JoystickTwist", twist);
