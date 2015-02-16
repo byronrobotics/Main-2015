@@ -17,7 +17,7 @@ public class DriveStraight extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.chassis.DriveStraight();
-    	setTimeout(0.5);
+    	setTimeout(3.0);
     }
 
     // Called repeatedly when this Command is scheduled to run

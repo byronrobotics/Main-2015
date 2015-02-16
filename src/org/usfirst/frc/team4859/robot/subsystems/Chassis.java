@@ -89,17 +89,11 @@ public class Chassis extends Subsystem
 		//here we are stating that we have to use button 3 in order to use encoders to set the speed of the wheels
 		//BE CAREFUL USING BUTTON 10!!
 		//it swaps between our joystick drive and our encoder drive
-		if(joystickP0.getRawButton(10))
+
+
+		if(RobotMap.pMode == true)
 		{
-			motorChassisLeft.set(VelocityLeft);
-			motorChassisRight.set(VelocityRight);
-			SmartDashboard.putString("ROBOT MODE", "Death");
-		}
-		
-		//Are values supposed to not be divided by anything? Maybe change this  - Callum
-		else if(RobotMap.pMode == true)
-		{
-			chassisDrive.arcadeDrive(y, twist);
+			chassisDrive.arcadeDrive(y/1.5, twist/1.25);
 			SmartDashboard.putString("ROBOT MODE", "Slow");	}
 		else
 		{
@@ -121,11 +115,17 @@ public class Chassis extends Subsystem
 //		SmartDashboard.putNumber("encChassisLeftspeed", motorChassisLeft.getSpeed()*.001);	
 	}
 	public void DriveStraight(){
+		
 		chassisDrive.arcadeDrive(.25,0);
 	}
 	public void DriveStop(){
 		chassisDrive.arcadeDrive(0,0);
+		
 	}
+	public void DriveLeft180(){
+		chassisDrive.arcadeDrive(0,.50);
+	}
+	
 	public static void Encoder(){
 		double encLeftPosition = motorChassisLeft.getEncPosition()*.0001*2.54;
 		double encRightPosition = motorChassisRight.getEncPosition()*.0001*2.54;

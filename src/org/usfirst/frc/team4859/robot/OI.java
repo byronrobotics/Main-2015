@@ -27,7 +27,7 @@ public class OI {
 	// Define a joystick(xbox controller) on port 1
 	Joystick joystickP1 = new Joystick(1);
 	
-	Button precisionMode = new JoystickButton(joystickP0, 8);
+	Button precisionMode = new JoystickButton(joystickP0, 12);
 
 	// Create intakeOut button on joystickP0 for button 2
 	Button precisionMode1 = new JoystickButton(joystickP0, 9);
@@ -55,9 +55,9 @@ public class OI {
 	{
 		return joystickP0;
 	}
-	public Joystick getJoystick1()
-	{
-		return joystickP1;
-	}
+//	public Joystick getJoystickP1()
+//	{
+//		return joystickP1;
+//	}
 }
 
