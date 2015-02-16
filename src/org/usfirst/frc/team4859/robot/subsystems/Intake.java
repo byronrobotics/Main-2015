@@ -18,7 +18,6 @@ public class Intake extends Subsystem
 	public Intake()
 	{
 		super();
-		
 	}
 
 	

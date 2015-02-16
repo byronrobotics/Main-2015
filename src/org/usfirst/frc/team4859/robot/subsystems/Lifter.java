@@ -1,9 +1,12 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
 import org.usfirst.frc.team4859.robot.RobotMap;
+import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
+import org.usfirst.frc.team4859.robot.commands.JoystickLifter;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
 //import edu.wpi.first.wpilibj.Joystick;
@@ -29,6 +32,7 @@ public class Lifter extends Subsystem
 		
 		
 		protected void initDefaultCommand() {
+			setDefaultCommand(new JoystickLifter());
 		}
 		
 		
@@ -83,47 +87,32 @@ public class Lifter extends Subsystem
 		}
 
 		// Utility function to adjust joystick coordinates
-		/*private double joystickAdjust(double value, double deadzone)
+		private double joystickAdjust(double value, double deadzone)
 		{
 			double temp;
 			// Value is the value from the joystick, deadzone is self-explanatory
 			// Squaring and deadzones for cartesian (X, Y, and Twist(Z) value
 					if(value > deadzone)
 					{
-						temp = value*value;
+						temp = value;
 					}
 					else if(value < -deadzone)
 					{
-						temp = -value*value;
+						temp = value;
 					}
 					else
 					{
 						temp = 0;
 					}
-			//Putting Deadzone values to dashboard from equation
-			SmartDashboard.putNumber("DeadzoneAdjust", deadzone);
-			SmartDashboard.putNumber("JoystickAdjust", value);
 			return temp;
 		}
 		
 		
 		//Made this to adjust the speed up and down from dashboard the values and to see the values
 		//Also made the Lift Up & Down by VIA the Second Joystick joystickP1 or in Port 1
-		public void JoystickLifter(Joystick joystickP1) {
-			double y = joystickAdjust(joystickP1.getY()*1000, 0.015);
-			double twist = 0;
-			//LIFT UP
-			//set motor speeds for when you call LiftUp
-			lifterDrive.arcadeDrive(y, twist);
-			//Puting the lift Encoder Velocity to dashboard
-			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-			//Stating the Position of the Lift STRING
-			if(motorLifterRight.isFwdLimitSwitchClosed()){
-				SmartDashboard.putString("Lift", "UP");	
-			} else if(motorLifterRight.isRevLimitSwitchClosed()){
-				SmartDashboard.putString("Lift", "DOWN");
-			} else {
-				SmartDashboard.putString("Lift", "STOP");
-			}
-		}*/
+		public void joystickLifter(Joystick joystickP1) {
+			double y = joystickAdjust(joystickP1.getY()*1000, .05);
+			
+			motorLifterRight.set(y/2);
+		}
 }
