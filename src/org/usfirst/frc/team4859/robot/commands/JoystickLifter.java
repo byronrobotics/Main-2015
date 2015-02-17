@@ -17,7 +17,8 @@ public class JoystickLifter extends Command {
 	
 	protected void execute()
 	{
-		Robot.lifter.joystickLifter(Robot.oi.getJoystickP1());
+		//Robot.lifter.joystickLifter(Robot.oi.getJoystickP1());
+		Robot.lifter.joystickLifter(Robot.oi.getXbox());
 	}
 	
 	protected boolean isFinished()
