@@ -28,11 +28,10 @@ public class LiftUp extends Command
 
 	
 	protected void end() {
-		Robot.lifter.liftStop();
 	}
 
 	
 	protected void interrupted() {
-		end();
+		
 	}	
 }

@@ -3,10 +3,12 @@ package org.usfirst.frc.team4859.robot;
 
 import org.usfirst.frc.team4859.robot.commands.DriveTest;
 import org.usfirst.frc.team4859.robot.commands.LiftDown;
+import org.usfirst.frc.team4859.robot.commands.LiftStop;
 import org.usfirst.frc.team4859.robot.commands.LiftUp;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
 //import org.usfirst.frc.team4859.robot.commands.PrecisionOff;
 //import org.usfirst.frc.team4859.robot.commands.PrecisionOn;
+
 
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -38,15 +40,17 @@ public class OI {
 	// Create liftUp button on xboxP1 for button 5
 	Button liftUp = new JoystickButton(xboxP1, 1);
 	
-	Button test = new JoystickButton(joystickP0, 2);
+	//Button test = new JoystickButton(joystickP0, 2);
 	
 	public OI()
 	
 	{
 		precisionMode.toggleWhenPressed(new PrecisionMode());
-		liftUp.whileHeld(new LiftUp());
-		liftDown.whileHeld(new LiftDown());
-		test.whileHeld(new DriveTest());
+		liftUp.whenPressed(new LiftUp());
+		liftUp.whenReleased(new LiftStop());
+		liftDown.whenPressed(new LiftDown());
+		liftDown.whenReleased(new LiftStop());
+		//test.whileHeld(new DriveTest());
 	}
 	
 	

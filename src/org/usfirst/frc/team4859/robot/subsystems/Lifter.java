@@ -24,7 +24,7 @@ public class Lifter extends Subsystem
 		public Lifter(){
 			super();
 			
-//			motorLifterRight.changeControlMode(ControlMode.Speed); //change right motor control mode to speed instead of throttle
+			//motorLifterRight.changeControlMode(ControlMode.Speed); //change right motor control mode to speed instead of throttle
 			motorLifterLeft.changeControlMode(ControlMode.Follower); //change left motor control mode to follower mode
 			motorLifterLeft.set(RobotMap.talonDevIDLifterRight); //tell the left motor to follow the right motor
 		}
@@ -37,7 +37,7 @@ public class Lifter extends Subsystem
 		
 		public void liftUp(){ // brings lift up du
 			//set motor speeds for when you call LiftUp
-			motorLifterRight.set(0.1);
+			motorLifterRight.set(0.7);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putString("Lift", "Up");
 		}
@@ -46,7 +46,7 @@ public class Lifter extends Subsystem
 		public void liftDown() //brings lift down du.
 		{
 			//set motor speeds for when you call LiftDown
-				motorLifterRight.set(-0.05);
+				motorLifterRight.set(-0.50);
 				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 				SmartDashboard.putString("Lift", "Down");
 		}
@@ -56,7 +56,7 @@ public class Lifter extends Subsystem
 		{
 			motorLifterRight.ClearIaccum();
 			//set motor speeds for when you call LiftStop
-			motorLifterRight.set(0);
+			motorLifterRight.set(0.0);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putString("Lift", "Stopped");
 		}

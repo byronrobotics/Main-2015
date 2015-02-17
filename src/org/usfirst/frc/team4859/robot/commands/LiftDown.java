@@ -12,8 +12,7 @@ public class LiftDown extends Command
 	}
 	
 	
-	protected void initialize(){
-		
+	protected void initialize(){	
 		Robot.lifter.liftDown();
 	}
 
@@ -30,12 +29,12 @@ public class LiftDown extends Command
 	
 	protected void end()
 	{
-		Robot.lifter.liftStop();
+	
 	}
 
 	
 	protected void interrupted()
 	{
-		end();
+		
 	}
 }

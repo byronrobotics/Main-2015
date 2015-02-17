@@ -29,12 +29,12 @@ public class LiftStop extends Command
 	
 	protected void end()
 	{
-		Robot.lifter.liftStop();
+		//Robot.lifter.liftStop();
 	}
 
 	
 	protected void interrupted()
 	{
-		end();
+		//end();
 	}
 }
