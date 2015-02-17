@@ -111,9 +111,9 @@ public class Lifter extends Subsystem
 		
 		//Made this to adjust the speed up and down from dashboard the values and to see the values
 		//Also made the Lift Up & Down by VIA the Second Joystick joystickP1 or in Port 1
-//		public void joystickLifter(Joystick joystickP1) {
-//			double y = joystickAdjust(joystickP1.getY()*1000, .06);
-//			
-//			motorLifterRight.set(-y/2);
-//		}
+		public void joystickLifter(Joystick joystickP1) {
+			double y = joystickAdjust(joystickP1.getY()*1000, .06);
+			
+			motorLifterRight.set(y/2);
+		}
 }
