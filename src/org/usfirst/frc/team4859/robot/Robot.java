@@ -9,7 +9,6 @@ import org.usfirst.frc.team4859.robot.autonomous.AutoStartRightCan;
 import org.usfirst.frc.team4859.robot.autonomous.AutoStartRightTote;
 import org.usfirst.frc.team4859.robot.autonomous.Autonomous;
 import org.usfirst.frc.team4859.robot.subsystems.Chassis;
-import org.usfirst.frc.team4859.robot.subsystems.Intake;
 import org.usfirst.frc.team4859.robot.subsystems.Lifter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -24,14 +23,12 @@ public class Robot extends IterativeRobot
 {
 	//Create subsystems
 	public static Chassis chassis;
-	public static Intake intake;
 	public static Lifter lifter;
 	public static OI oi;
 
     Command autonomousCommand;
     SendableChooser autonomousChooser;
-    Command speedCommand;
-    SendableChooser speed;
+
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -39,24 +36,10 @@ public class Robot extends IterativeRobot
     public void robotInit()
     {
     	chassis = new Chassis();
-    	intake = new Intake();
     	lifter = new Lifter();
 		oi = new OI();
 
-//		speed = new SendableChooser();
-//		speed.addObject("1.0", 1);
-//		speed.addObject(".9", .9);
-//		speed.addObject(".8", .8);
-//		speed.addObject(".75", .75);		
-//		speed.addObject(".6", .6);
-//		speed.addObject(".5", .5);
-//		speed.addObject(".4", .4);
-//		speed.addObject(".3", .3);
-//		speed.addObject(".25", .25);		
-//		speed.addObject(".2", .2);
-//		speed.addObject(".1", .1);
-//		speed.addObject(".05", .05);
-//		SmartDashboard.putData("Drive Straight Speed", speed);
+
 		autonomousChooser = new SendableChooser();
 		autonomousChooser.addDefault("Start Left Get Tote", new AutoStartLeftTote());
 		autonomousChooser.addDefault("Start Mid Get Tote", new AutoStartMidTote());
