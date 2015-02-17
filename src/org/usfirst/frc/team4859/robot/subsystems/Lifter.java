@@ -20,7 +20,7 @@ public class Lifter extends Subsystem
 	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight); //main
 	static CANTalon motorLifterLeft = new CANTalon(RobotMap.talonDevIDLifterLeft); //follower
 	static AnalogInput photoSwitch = new AnalogInput(0);
-	static RobotDrive lifterDrive = new RobotDrive(motorLifterLeft, motorLifterRight);	
+	//static RobotDrive lifterDrive = new RobotDrive(motorLifterLeft, motorLifterRight);	
 		public Lifter(){
 			super();
 			
@@ -37,7 +37,11 @@ public class Lifter extends Subsystem
 		
 		public void liftUp(){ // brings lift up du
 			//set motor speeds for when you call LiftUp
+<<<<<<< HEAD
 			motorLifterRight.set(0.7);
+=======
+			motorLifterRight.set(0.2);
+>>>>>>> origin/master
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putString("Lift", "Up");
 		}
@@ -46,7 +50,11 @@ public class Lifter extends Subsystem
 		public void liftDown() //brings lift down du.
 		{
 			//set motor speeds for when you call LiftDown
+<<<<<<< HEAD
 				motorLifterRight.set(-0.50);
+=======
+				motorLifterRight.set(-0.1);
+>>>>>>> origin/master
 				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 				SmartDashboard.putString("Lift", "Down");
 		}
@@ -54,7 +62,7 @@ public class Lifter extends Subsystem
 		
 		public void liftStop() //stops lift motors du
 		{
-			motorLifterRight.ClearIaccum();
+			//motorLifterRight.ClearIaccum();
 			//set motor speeds for when you call LiftStop
 			motorLifterRight.set(0.0);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
