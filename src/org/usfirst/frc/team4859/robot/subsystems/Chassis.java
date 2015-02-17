@@ -89,15 +89,15 @@ public class Chassis extends Subsystem
 		//it swaps between our joystick drive and our encoder drive
 
 
-//		if(RobotMap.pMode == true)
-//		{
-//			chassisDrive.arcadeDrive(y/1.5, twist/1.25);
-//			SmartDashboard.putString("ROBOT MODE", "Slow");	}
-//		else
-//		{
-//			chassisDrive.arcadeDrive(y, twist);
-//			SmartDashboard.putString("ROBOT MODE", "Normal");
-//		}
+		if(RobotMap.pMode == true)
+		{
+			chassisDrive.arcadeDrive(y/1.5, twist/1.25);
+			SmartDashboard.putString("ROBOT MODE", "Slow");	}
+		else
+		{
+			chassisDrive.arcadeDrive(y, twist);
+			SmartDashboard.putString("ROBOT MODE", "Normal");
+		}
 		
 		SmartDashboard.putNumber("JoystickY", y);
 		SmartDashboard.putNumber("JoystickTwist", twist);
