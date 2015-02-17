@@ -37,11 +37,7 @@ public class Lifter extends Subsystem
 		
 		public void liftUp(){ // brings lift up du
 			//set motor speeds for when you call LiftUp
-<<<<<<< HEAD
 			motorLifterRight.set(0.7);
-=======
-			motorLifterRight.set(0.2);
->>>>>>> origin/master
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putString("Lift", "Up");
 		}
@@ -50,11 +46,7 @@ public class Lifter extends Subsystem
 		public void liftDown() //brings lift down du.
 		{
 			//set motor speeds for when you call LiftDown
-<<<<<<< HEAD
-				motorLifterRight.set(-0.50);
-=======
 				motorLifterRight.set(-0.1);
->>>>>>> origin/master
 				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 				SmartDashboard.putString("Lift", "Down");
 		}
