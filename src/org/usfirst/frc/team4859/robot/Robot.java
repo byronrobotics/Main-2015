@@ -10,7 +10,6 @@ import org.usfirst.frc.team4859.robot.autonomous.AutoStartRightTote;
 import org.usfirst.frc.team4859.robot.autonomous.Autonomous;
 import org.usfirst.frc.team4859.robot.subsystems.Chassis;
 import org.usfirst.frc.team4859.robot.subsystems.Lifter;
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -18,9 +17,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-
-public class Robot extends IterativeRobot
-{
+public class Robot extends IterativeRobot {
 	//Create subsystems
 	public static Chassis chassis;
 	public static Lifter lifter;
@@ -35,11 +32,12 @@ public class Robot extends IterativeRobot
      */
     public void robotInit()
     {
+    	// Initialize subsystems
     	chassis = new Chassis();
     	lifter = new Lifter();
 		oi = new OI();
 
-
+		// Add autonomous modes
 		autonomousChooser = new SendableChooser();
 		autonomousChooser.addDefault("Start Left Get Tote", new AutoStartLeftTote());
 		autonomousChooser.addDefault("Start Mid Get Tote", new AutoStartMidTote());
@@ -51,11 +49,12 @@ public class Robot extends IterativeRobot
 		autonomousChooser.addDefault("Start Nothing", new AutoNothing());
 		SmartDashboard.putData("Autonomous Mode Chooser", autonomousChooser);
 		
-        // instantiate the command used for the autonomous period
+        // Instantiate the command used for the autonomous period
         autonomousCommand = new Autonomous();
     }
 	
-	public void disabledPeriodic() {
+	public void disabledPeriodic()
+	{
 		Scheduler.getInstance().run();
 	}
 
@@ -68,11 +67,13 @@ public class Robot extends IterativeRobot
     /**
      * This function is called periodically during autonomous
      */
-    public void autonomousPeriodic() {
+    public void autonomousPeriodic()
+    {
         Scheduler.getInstance().run();
     }
 
-    public void teleopInit() {
+    public void teleopInit()
+    {
 		// This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
@@ -84,21 +85,23 @@ public class Robot extends IterativeRobot
      * This function is called when the disabled button is hit.
      * You can use it to reset subsystems before shutting down.
      */
-    public void disabledInit(){
-
+    public void disabledInit()
+    {
     }
 
     /**
      * This function is called periodically during operator control
      */
-    public void teleopPeriodic() {
+    public void teleopPeriodic()
+    {
         Scheduler.getInstance().run();
     }
     
     /**
      * This function is called periodically during test mode
      */
-    public void testPeriodic() {
+    public void testPeriodic()
+    {
         LiveWindow.run();
     }
 }

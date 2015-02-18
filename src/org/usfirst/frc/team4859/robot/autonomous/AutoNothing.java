@@ -3,8 +3,9 @@ package org.usfirst.frc.team4859.robot.autonomous;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class AutoNothing extends CommandGroup {
-    
-    public  AutoNothing() {
+	
+    public  AutoNothing()
+    {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

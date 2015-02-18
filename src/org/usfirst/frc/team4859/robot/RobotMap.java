@@ -15,15 +15,13 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
+	
 	public static int talonDevIDChassisRight = 14;
 	public static int talonDevIDChassisLeft = 12;
 	
-	public static int  talonDevIDLifterRight =  16; //Looking with input backwards and output forwards16
-	public static int  talonDevIDLifterLeft =  11;  //Looking with input backwards and output forwards11
+	public static int  talonDevIDLifterRight =  16; //Looking with input backwards and output forwards
+	public static int  talonDevIDLifterLeft =  11;  //Looking with input backwards and output forwards
 	
-	// Create precision mode button on for button 8
+	// Create precision mode variable and set to false by default
 	public static boolean pMode = false;
-	
-
-	
 }

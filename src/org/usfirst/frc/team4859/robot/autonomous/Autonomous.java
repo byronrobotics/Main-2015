@@ -1,14 +1,11 @@
 package org.usfirst.frc.team4859.robot.autonomous;
 
-
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-/**
- *
- */
 public class Autonomous extends CommandGroup {
     
-    public  Autonomous() {
+    public  Autonomous()
+    {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -26,8 +23,5 @@ public class Autonomous extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	addSequential(new DriveStraight());
-    	
-        
-    	
     }
 }
