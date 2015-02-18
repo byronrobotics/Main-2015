@@ -3,11 +3,15 @@ package org.usfirst.frc.team4859.robot;
 
 import org.usfirst.frc.team4859.robot.commands.DriveTest;
 import org.usfirst.frc.team4859.robot.commands.LiftDown;
+import org.usfirst.frc.team4859.robot.commands.LiftDownBeast;
 import org.usfirst.frc.team4859.robot.commands.LiftStop;
 import org.usfirst.frc.team4859.robot.commands.LiftUp;
+import org.usfirst.frc.team4859.robot.commands.LiftUpDeath;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
 //import org.usfirst.frc.team4859.robot.commands.PrecisionOff;
 //import org.usfirst.frc.team4859.robot.commands.PrecisionOn;
+
+
 
 
 
@@ -39,6 +43,8 @@ public class OI {
 	Button liftDown = new JoystickButton(xboxP1, 2);
 	// Create liftUp button on xboxP1 for button 5
 	Button liftUp = new JoystickButton(xboxP1, 1);
+	Button liftUpDeath = new JoystickButton(xboxP1, 3);
+	Button liftDownBeast = new JoystickButton(xboxP1, 4);
 	
 	//Button test = new JoystickButton(joystickP0, 2);
 	
@@ -50,6 +56,10 @@ public class OI {
 		liftUp.whenReleased(new LiftStop());
 		liftDown.whenPressed(new LiftDown());
 		liftDown.whenReleased(new LiftStop());
+		liftUpDeath.whenPressed(new LiftUpDeath());
+		liftUpDeath.whenReleased(new LiftStop());
+		liftDownBeast.whenPressed(new LiftDownBeast());
+		liftDownBeast.whenReleased(new LiftStop());
 		//test.whileHeld(new DriveTest());
 	}
 	
