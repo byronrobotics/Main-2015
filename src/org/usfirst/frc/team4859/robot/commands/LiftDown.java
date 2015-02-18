@@ -18,7 +18,7 @@ public class LiftDown extends Command
 
 	
 	protected void execute(){
-		 
+		Robot.lifter.liftDown();
 	}
 
 	

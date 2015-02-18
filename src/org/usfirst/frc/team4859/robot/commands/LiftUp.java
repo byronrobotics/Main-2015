@@ -18,6 +18,7 @@ public class LiftUp extends Command
 
 	
 	protected void execute() {
+		Robot.lifter.liftUp();
 		
 	}
 
