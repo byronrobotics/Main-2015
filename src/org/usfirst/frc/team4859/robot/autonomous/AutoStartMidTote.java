@@ -2,12 +2,10 @@ package org.usfirst.frc.team4859.robot.autonomous;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-/**
- *
- */
 public class AutoStartMidTote extends CommandGroup {
     
-    public  AutoStartMidTote() {
+    public  AutoStartMidTote()
+    {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
