@@ -83,7 +83,7 @@ public class Lifter extends Subsystem {
 		
 		public void liftAutoDown()
 		{
-			//set motor speeds for when you call LiftUp
+			// Set motor speeds for when you call LiftUp
 			if(photoSwitch.getVoltage() >10 && photoSwitch.getVoltage()<4){	
 					motorLifterRight.set(.40);
 					SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
