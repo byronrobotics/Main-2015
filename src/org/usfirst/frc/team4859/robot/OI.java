@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {	
 	// Create a joystick on port 0
 	private final Joystick joystickP0 = new Joystick(0);
+
 	// Create a joystick (xbox controller) on port 1
 	private final Joystick xboxP1 = new Joystick(1);
 	

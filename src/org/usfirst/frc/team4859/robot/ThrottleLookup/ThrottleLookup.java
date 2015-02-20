@@ -6,30 +6,37 @@ public class ThrottleLookup
 
 	//slow
 	public static double[][] correctionTable1 = {
-		{.02, .30, .60, .90, 1.0},
-		{.00, .40, .80, .90, 1.0}};
+		{.02, .25, .50, .75, 1.0},
+		{.00, .08, .12, .20, .40}};
 	//normal
 	public static double[][] correctionTable2 = {
-		{.02, .30, .60, .90, 1.0},
-		{.00, .20, .40, .90, 1.0}};
+		{.02, .25, .50, .75, 1.0},
+		{.00, .12, .27, .7, 1.0}};
 
 	//got to go fast
 	public static double[][] correctionTable3 = {
-		{.02, .30, .60, .90, 1.0},
-		{.00, .20, .30, .90, 1.0}};
+		{.02,  .25,  .50,  .75,  1.0},
+		{.00, -.06, -.10, -.30, -5.0}};
+
+	//got to go fast
+	public static double[][] correctionTable4 = {
+		{.02,  .25,  .50,  .75,  1.0},
+		{.00, -.15, -.25, -.55, -0.8}};
 
 	
-	public static double calcJoystickCorrection(int tableNumber, double x)
+	public static double calcJoystickCorrection(String tableName, double x)
 	{
 		double[][] correctionTable;
 		
-		switch (tableNumber)
+		switch (tableName)
 		{
-			case 1: correctionTable = correctionTable1;
+			case "SlowY" : correctionTable = correctionTable1;
 				break;
-			case 2: correctionTable = correctionTable2;
+			case "NormY" : correctionTable = correctionTable2;
 				break;
-			case 3: correctionTable = correctionTable3;
+			case "SlowT": correctionTable = correctionTable3;
+				break;
+			case "NormT": correctionTable = correctionTable3;
 				break;
 			default : correctionTable = correctionTable1;
 		}

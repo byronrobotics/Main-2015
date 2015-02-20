@@ -37,50 +37,43 @@ public class Chassis extends Subsystem
 	}
 	public void driveWithJoystick(Joystick joystickP0)
 	{
-		// Get simple values from joystick
+		// Get raw values from joystick controller
+		double yAxis = joystickP0.getY();
 		double twist = joystickP0.getTwist();
-		double y = joystickP0.getY();
 		
-		twist = -twist/1.25;
+		// Apply translations to the values from the controller
+		twist = (RobotMap.pMode) ? ThrottleLookup.calcJoystickCorrection("SlowT", twist) : ThrottleLookup.calcJoystickCorrection("NormT", twist);
+		yAxis = (RobotMap.pMode) ? ThrottleLookup.calcJoystickCorrection("SlowY", yAxis) : ThrottleLookup.calcJoystickCorrection("NormY", yAxis); 
 		
-		if (RobotMap.pMode == true) {
-			y = ThrottleLookup.calcJoystickCorrection(1, y);
-		}else { 
-			y = ThrottleLookup.calcJoystickCorrection(2, y);
-		}	
-		
-		if(RobotMap.pMode == true)
-		{
-			chassisDrive.arcadeDrive(y/2, twist/1.5);
-			SmartDashboard.putString("ROBOT MODE", "Slow");	}
-		else
-		{
-			chassisDrive.arcadeDrive(y, twist);
-			SmartDashboard.putString("ROBOT MODE", "Normal");
-		}
-		
-		SmartDashboard.putNumber("JoystickY", y);
+		SmartDashboard.putString("ROBOT MODE", (RobotMap.pMode) ? "Slow" : "Normal");	
+				
+		SmartDashboard.putNumber("JoystickY", yAxis);
 		SmartDashboard.putNumber("JoystickTwist", twist);
 		SmartDashboard.putBoolean("Precision Mode", RobotMap.pMode);
-}
+	}
+	
 	public void DriveStraight(){		
 		motorChassisRight.changeControlMode(ControlMode.Speed);
 		motorChassisLeft.changeControlMode(ControlMode.Speed);
 		chassisDrive.arcadeDrive(.25,0);
 	}
+	
 	public void DriveStop(){
 		chassisDrive.arcadeDrive(0,0);
 	}
+	
 	public void DriveLeft180(){
 		motorChassisRight.changeControlMode(ControlMode.Speed);
 		motorChassisLeft.changeControlMode(ControlMode.Speed);
 		chassisDrive.arcadeDrive(0,.50);
 	}
+	
 	public void DriveRight180(){
 		motorChassisRight.changeControlMode(ControlMode.Speed);
 		motorChassisLeft.changeControlMode(ControlMode.Speed);
 		chassisDrive.arcadeDrive(0,-.50);
 	}
+	
 	public void Drivetest(){
 		motorChassisRight.changeControlMode(ControlMode.Position);
 		motorChassisLeft.changeControlMode(ControlMode.Position);
