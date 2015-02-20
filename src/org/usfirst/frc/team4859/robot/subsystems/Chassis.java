@@ -95,12 +95,4 @@ public class Chassis extends Subsystem {
 		motorChassisLeft.changeControlMode(ControlMode.Speed);
 		chassisDrive.arcadeDrive(0,-.50);
 	}
-	
-	public void Drivetest()
-	{
-		motorChassisRight.changeControlMode(ControlMode.Position);
-		motorChassisLeft.changeControlMode(ControlMode.Position);
-		motorChassisLeft.setPosition(2);
-		motorChassisRight.setPosition(2);
-	}
 }

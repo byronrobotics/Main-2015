@@ -44,7 +44,7 @@ public class Lifter extends Subsystem {
 			SmartDashboard.putString("Lift", "Up Fast");
 		}
 		
-		public void liftDown() //brings lift down du.
+		public void liftDown()
 		{
 			// Set motor speeds for when you call LiftDown
 			motorLifterRight.set(-0.4);
@@ -52,25 +52,25 @@ public class Lifter extends Subsystem {
 			SmartDashboard.putString("Lift", "Down");
 		}
 		
-		public void liftDownFast() //brings lift down du.
+		public void liftDownFast()
 		{
-			//set motor speeds for when you call LiftDown
-				motorLifterRight.set(-1.0);
-				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-				SmartDashboard.putString("Lift", "Down Fast");
+			// Set motor speeds for when you call LiftDown
+			motorLifterRight.set(-1.0);
+			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
+			SmartDashboard.putString("Lift", "Down Fast");
 		}
 		
-		public void liftStop() //stops lift motors du
+		public void liftStop()
 		{
-			//motorLifterRight.ClearIaccum();
-			//set motor speeds for when you call LiftStop
+			// Set motor speeds for when you call LiftStop
 			motorLifterRight.set(0.0);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putString("Lift", "Stopped");
 		}
+		
 		public void liftAutoUp()
 		{
-			//set motor speeds for when you call LiftUp
+			// Set motor speeds for when you call LiftUp
 			if(photoSwitch.getVoltage() >1 && photoSwitch.getVoltage()<0){	
 					motorLifterRight.set(-0.7);
 					SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
@@ -80,6 +80,7 @@ public class Lifter extends Subsystem {
 					SmartDashboard.putString("Lift", "Error-Up");
 				} 
 		}
+		
 		public void liftAutoDown()
 		{
 			//set motor speeds for when you call LiftUp
@@ -92,35 +93,4 @@ public class Lifter extends Subsystem {
 					SmartDashboard.putString("Lift", "Error-Down");
 			} 
 		}
-
-//		// Utility function to adjust joystick coordinates
-//		private double joystickAdjust(double value, double deadzone)
-//		{
-//			double temp;
-//			// Value is the value from the joystick, deadzone is self-explanatory
-//			// Squaring and deadzones for cartesian (X, Y, and Twist(Z) value
-//					if(value > deadzone)
-//					{
-//						temp = value;
-//					}
-//					else if(value < -deadzone)
-//					{
-//						temp = value;
-//					}
-//					else
-//					{
-//						motorLifterRight.ClearIaccum();
-//						temp = 0;
-//					}
-//			return temp;
-//		}
-//		
-//		
-//		//Made this to adjust the speed up and down from dashboard the values and to see the values
-//		//Also made the Lift Up & Down by VIA the Second Joystick joystickP1 or in Port 1
-//		public void joystickLifter(Joystick joystickP1) {
-//			double y = joystickAdjust(joystickP1.getY()*1000, .06);
-//			
-//			motorLifterRight.set(y/2);
-//		}
 }
