@@ -1,68 +1,63 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
 import org.usfirst.frc.team4859.robot.RobotMap;
-//import org.usfirst.frc.team4859.robot.commands.JoystickLifter;
-
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
-//import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
-//import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 // The lifting mechanism  control
-public class Lifter extends Subsystem
-{	
-	//fwd limit switch is bottom limitswitch
-	//rev limit switch is the top limitswitch
+public class Lifter extends Subsystem {	
+	// Forward limit switch is on the bottom
+	// Reverse limit switch is the top
 	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight); //main
 	static CANTalon motorLifterLeft = new CANTalon(RobotMap.talonDevIDLifterLeft); //follower
+	
+	// Creating the photo sensor
 	static AnalogInput photoSwitch = new AnalogInput(0);
-	//static RobotDrive lifterDrive = new RobotDrive(motorLifterLeft, motorLifterRight);	
-		public Lifter(){
+	
+		public Lifter()
+		{
 			super();
-			
-			//motorLifterRight.changeControlMode(ControlMode.Speed); //change right motor control mode to speed instead of throttle
 			motorLifterLeft.changeControlMode(ControlMode.Follower); //change left motor control mode to follower mode
 			motorLifterLeft.set(RobotMap.talonDevIDLifterRight); //tell the left motor to follow the right motor
 		}
 		
-		
-		protected void initDefaultCommand() {
-//			setDefaultCommand(new JoystickLifter());
+		protected void initDefaultCommand()
+		{
 		}
 		
-		
-		public void liftUp(){ // brings lift up du
-			//set motor speeds for when you call LiftUp
-			motorLifterRight.set(-0.6);
+		public void liftUp()
+		{
+			// Set motor speeds for when you call LiftUp
+			motorLifterRight.set(0.6);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 			SmartDashboard.putString("Lift", "Up");
 		}
 		
-		public void liftUpDeath(){ // brings lift up du
-			//set motor speeds for when you call LiftUp
-			motorLifterRight.set(-1.0);
+		public void liftUpFast()
+		{
+			// Set motor speeds for when you call LiftUp
+			motorLifterRight.set(1.0);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-			SmartDashboard.putString("Lift", "Up");
+			SmartDashboard.putString("Lift", "Up Fast");
 		}
 		
 		public void liftDown() //brings lift down du.
 		{
-			//set motor speeds for when you call LiftDown
-				motorLifterRight.set(0.4);
-				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-				SmartDashboard.putString("Lift", "Down");
+			// Set motor speeds for when you call LiftDown
+			motorLifterRight.set(-0.4);
+			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
+			SmartDashboard.putString("Lift", "Down");
 		}
 		
-		public void liftDownBeast() //brings lift down du.
+		public void liftDownFast() //brings lift down du.
 		{
 			//set motor speeds for when you call LiftDown
-				motorLifterRight.set(1.0);
+				motorLifterRight.set(-1.0);
 				SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
-				SmartDashboard.putString("Lift", "Down");
+				SmartDashboard.putString("Lift", "Down Fast");
 		}
 		
 		public void liftStop() //stops lift motors du
