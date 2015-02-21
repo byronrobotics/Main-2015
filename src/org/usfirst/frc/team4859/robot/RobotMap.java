@@ -16,8 +16,8 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 	
-	public static int talonDevIDChassisRight = 14;
-	public static int talonDevIDChassisLeft = 12;
+	public static int talonDevIDChassisRight = 13;//14 real bot
+	public static int talonDevIDChassisLeft = 15;//12 real bot
 	
 	public static int  talonDevIDLifterRight =  16; //Looking with input backwards and output forwards
 	public static int  talonDevIDLifterLeft =  11;  //Looking with input backwards and output forwards
