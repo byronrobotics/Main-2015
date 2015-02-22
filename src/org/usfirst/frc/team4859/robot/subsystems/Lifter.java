@@ -1,9 +1,11 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
 import org.usfirst.frc.team4859.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -14,6 +16,7 @@ public class Lifter extends Subsystem {
 	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight); //main
 	static CANTalon motorLifterLeft = new CANTalon(RobotMap.talonDevIDLifterLeft); //follower
 	
+	static Talon motorLifterSR = new Talon(RobotMap.talonDevIDLifterSR);
 	// Creating the photo sensor
 	static AnalogInput photoSwitch = new AnalogInput(0);
 	
@@ -30,6 +33,7 @@ public class Lifter extends Subsystem {
 		
 		public void liftUp()
 		{
+			motorLifterSR.set(0.6);
 			// Set motor speeds for when you call LiftUp
 			motorLifterRight.set(0.6);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
@@ -38,6 +42,7 @@ public class Lifter extends Subsystem {
 		
 		public void liftUpFast()
 		{
+			motorLifterSR.set(1.0);
 			// Set motor speeds for when you call LiftUp
 			motorLifterRight.set(1.0);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
@@ -46,6 +51,7 @@ public class Lifter extends Subsystem {
 		
 		public void liftDown()
 		{
+			motorLifterSR.set(-0.4);
 			// Set motor speeds for when you call LiftDown
 			motorLifterRight.set(-0.4);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
@@ -54,6 +60,7 @@ public class Lifter extends Subsystem {
 		
 		public void liftDownFast()
 		{
+			motorLifterSR.set(-1.0);
 			// Set motor speeds for when you call LiftDown
 			motorLifterRight.set(-1.0);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
@@ -62,6 +69,7 @@ public class Lifter extends Subsystem {
 		
 		public void liftStop()
 		{
+			motorLifterSR.set(0.0);
 			// Set motor speeds for when you call LiftStop
 			motorLifterRight.set(0.0);
 			SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());

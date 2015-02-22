@@ -22,6 +22,8 @@ public class RobotMap {
 	public static int  talonDevIDLifterRight =  16; //Looking with input backwards and output forwards
 	public static int  talonDevIDLifterLeft =  11;  //Looking with input backwards and output forwards
 	
+	public static int talonDevIDLifterSR= 0;
+	
 	// Create precision mode variable and set to false by default
 	public static boolean pMode = false;
 }
