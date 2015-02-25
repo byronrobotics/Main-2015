@@ -50,6 +50,8 @@ public class Chassis extends Subsystem
 		SmartDashboard.putNumber("JoystickY", yAxis);
 		SmartDashboard.putNumber("JoystickTwist", twist);
 		SmartDashboard.putBoolean("Precision Mode", RobotMap.pMode);
+		
+		chassisDrive.arcadeDrive(yAxis, twist);
 	}
 	
 	public void DriveStraight(){		
