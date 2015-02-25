@@ -18,7 +18,7 @@ public class LiftStop extends Command
 	
 	protected void execute()
 	{
-		
+		Robot.lifter.liftStop();
 	}
 
 	

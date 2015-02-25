@@ -27,7 +27,7 @@ public class Chassis extends Subsystem
 		motorChassisRight.changeControlMode(ControlMode.PercentVbus);
 		motorChassisLeft.changeControlMode(ControlMode.PercentVbus);
 		
-		//Set a timeout for the motors (1 second)
+		// Set a timeout for the motors (1 second)
 		chassisDrive.setSafetyEnabled(true);
 		chassisDrive.setExpiration(1);
 	}

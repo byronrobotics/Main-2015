@@ -27,21 +27,15 @@ public class OI {
 
 	// Create liftUp button on xboxP1 for button 1
 	Button liftUp = new JoystickButton(xboxP1, 1);
-		
 
 	// Create liftDown button on xboxP1 for button 2
 	Button liftDown = new JoystickButton(xboxP1, 2);
 	
 	// Create liftDownFast button on xboxP1 for button 3
 	Button liftDownFast = new JoystickButton(xboxP1, 3);
-		
 	
 	// Create liftUpFast button on xboxP1 for button 4
 	Button liftUpFast = new JoystickButton(xboxP1, 4);
-		
-
-	
-
 
 	public OI()
 	{
