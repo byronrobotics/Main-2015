@@ -3,22 +3,22 @@ package org.usfirst.frc.team4859.robot.commands;
 import org.usfirst.frc.team4859.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class LiftStop extends Command
+//The lift down command.
+
+public class LiftDownBeast extends Command
 {
-	public LiftStop()
-	{
+	public LiftDownBeast(){
 		requires(Robot.lifter);
 	}
 	
 	
-	protected void initialize(){
-		Robot.lifter.liftStop();
+	protected void initialize(){	
+		Robot.lifter.liftDownBeast();
 	}
 
 	
-	protected void execute()
-	{
-		
+	protected void execute(){
+		Robot.lifter.liftDownBeast();
 	}
 
 	
@@ -29,12 +29,12 @@ public class LiftStop extends Command
 	
 	protected void end()
 	{
-		Robot.lifter.liftStop();
+	
 	}
 
 	
 	protected void interrupted()
 	{
-		//end();
+		
 	}
 }

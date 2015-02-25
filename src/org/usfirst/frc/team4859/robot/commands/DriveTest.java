@@ -1,38 +1,41 @@
 package org.usfirst.frc.team4859.robot.commands;
 
-import org.usfirst.frc.team4859.robot.RobotMap;
-
+import org.usfirst.frc.team4859.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class PrecisionOn extends Command {
+public class DriveTest extends Command {
 
-    public PrecisionOn() {
-    	
-    }
+    public DriveTest()
+    {
+        // Use requires() here to declare subsystem dependencies
+    	requires(Robot.chassis);    }
 
     // Called just before this Command runs the first time
-    protected void initialize() {
-    	RobotMap.pMode = true;
-    	System.out.println("Precision On");
+    protected void initialize()
+    {
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-		//System.out.println("Toggle Executing");
-
+    protected void execute()
+    {
+    	Robot.chassis.Drivetest();
     }
 
     // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return true;
+    protected boolean isFinished()
+    {
+        return false;
     }
 
     // Called once after isFinished returns true
-    protected void end() {
+    protected void end()
+    {
+    	Robot.chassis.DriveStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
-    protected void interrupted() {
+    protected void interrupted()
+    {
     }
 }

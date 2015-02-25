@@ -4,21 +4,21 @@ import org.usfirst.frc.team4859.robot.Robot;
 //the lift up commands
 import edu.wpi.first.wpilibj.command.Command;
 
-public class LiftUp extends Command
+public class LiftUpDeath extends Command
 {
-	public LiftUp()
+	public LiftUpDeath()
 	{
 		requires(Robot.lifter);
 	}
 	
 	
 	protected void initialize() {
-		Robot.lifter.liftUp();
+		Robot.lifter.liftUpDeath();
 	}
 
 	
 	protected void execute() {
-		Robot.lifter.liftUp();
+		Robot.lifter.liftUpDeath();
 		
 	}
 
@@ -28,9 +28,7 @@ public class LiftUp extends Command
 	}
 
 	
-	protected void end()
-	{
-		Robot.lifter.liftStop();
+	protected void end() {
 	}
 
 	
