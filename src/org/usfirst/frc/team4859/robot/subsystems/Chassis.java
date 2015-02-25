@@ -53,9 +53,15 @@ public class Chassis extends Subsystem
 	}
 	
 	public void DriveStraight(){		
-		motorChassisRight.changeControlMode(ControlMode.Speed);
-		motorChassisLeft.changeControlMode(ControlMode.Speed);
-		chassisDrive.arcadeDrive(.25,0);
+//		motorChassisRight.changeControlMode(ControlMode.Speed);
+//		motorChassisLeft.changeControlMode(ControlMode.Speed);
+		chassisDrive.arcadeDrive(-0.5,0);
+	}
+	
+	public void DriveBackwards(){		
+//		motorChassisRight.changeControlMode(ControlMode.Speed);
+//		motorChassisLeft.changeControlMode(ControlMode.Speed);
+		chassisDrive.arcadeDrive(0.5,0);
 	}
 	
 	public void DriveStop(){
@@ -63,21 +69,45 @@ public class Chassis extends Subsystem
 	}
 	
 	public void DriveLeft180(){
-		motorChassisRight.changeControlMode(ControlMode.Speed);
-		motorChassisLeft.changeControlMode(ControlMode.Speed);
-		chassisDrive.arcadeDrive(0,.50);
+//		motorChassisRight.changeControlMode(ControlMode.Speed);
+//		motorChassisLeft.changeControlMode(ControlMode.Speed);
+		chassisDrive.arcadeDrive(0,0.65);
 	}
 	
 	public void DriveRight180(){
-		motorChassisRight.changeControlMode(ControlMode.Speed);
-		motorChassisLeft.changeControlMode(ControlMode.Speed);
-		chassisDrive.arcadeDrive(0,-.50);
+//		motorChassisRight.changeControlMode(ControlMode.Speed);
+//		motorChassisLeft.changeControlMode(ControlMode.Speed);
+		chassisDrive.arcadeDrive(0,-0.65);
 	}
 	
-	public void Drivetest(){
-		motorChassisRight.changeControlMode(ControlMode.Position);
-		motorChassisLeft.changeControlMode(ControlMode.Position);
-		motorChassisLeft.setPosition(2);
-		motorChassisRight.setPosition(2);
-	}
+	//What was in before the throttle tables
+/*	public void driveWithJoystick(Joystick joystickP0)
+	{
+		// Get simple values from joystick
+		double twist = joystickP0.getTwist();
+		double y = joystickP0.getY();
+		// Corrections for making driving easier
+		twist = -twist/1.25;
+		if(RobotMap.pMode == true)
+		{
+		y = ThrottleLookup.calcJoystickCorrection(1, y);
+		}
+		else
+		{
+		y = ThrottleLookup.calcJoystickCorrection(2, y);
+		}
+		if(RobotMap.pMode == true)
+		{
+		chassisDrive.arcadeDrive(y/2, twist/1.5);
+		SmartDashboard.putString("ROBOT MODE", "Slow");
+		}
+		else
+		{
+		chassisDrive.arcadeDrive(y, twist);
+		SmartDashboard.putString("ROBOT MODE", "Normal");
+		}
+		SmartDashboard.putNumber("JoystickY", y);
+		SmartDashboard.putNumber("JoystickTwist", twist);
+		SmartDashboard.putBoolean("Precision Mode", RobotMap.pMode);
+	}*/
 }

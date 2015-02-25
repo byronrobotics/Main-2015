@@ -4,45 +4,47 @@ import org.usfirst.frc.team4859.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class DriveLeft180 extends Command {
+/**
+ *
+ */
+public class LiftDownTime extends Command {
 
 	private double Time;
 	
-    public DriveLeft180(double inputTime)
+    public LiftDownTime(double inputTime) 
     {
         // Use requires() here to declare subsystem dependencies
-    	requires(Robot.chassis);
-    	Time = inputTime;
+        requires(Robot.lifter);
+        Time = inputTime;
     }
 
     // Called just before this Command runs the first time
-    protected void initialize()
+    protected void initialize() 
     {
-    	Robot.chassis.DriveLeft180();
+    	Robot.lifter.liftDownTime();
     	setTimeout(Time);
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute()
+    protected void execute() 
     {
-    	Robot.chassis.DriveLeft180();
+    	Robot.lifter.liftDownTime();
     }
 
     // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished()
+    protected boolean isFinished() 
     {
         return isTimedOut();
     }
 
     // Called once after isFinished returns true
-    protected void end()
+    protected void end() 
     {
-    	Robot.chassis.DriveStop();
+    	Robot.lifter.liftStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
-    protected void interrupted()
-    {
+    protected void interrupted() {
     }
 }
