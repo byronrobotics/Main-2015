@@ -25,6 +25,13 @@ public class RobotMap {
 	public static int talonDevIDLifterRightSR= 0;
 	public static int talonDevIDLifterLeftSR= 1;
 	
+	public static int lifterButtonUpFast = 4;
+	public static int lifterButtonDownFast = 3;
+	
+	public static int LifterButtonUp = 1;
+	public static int LifterButtonDown = 2;
+	
+	
 	// Create precision mode variable and set to false by default
 	public static boolean pMode = false;
 }
