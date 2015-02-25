@@ -1,9 +1,12 @@
 package org.usfirst.frc.team4859.robot;
 
 import org.usfirst.frc.team4859.robot.commands.LiftDown;
+import org.usfirst.frc.team4859.robot.commands.LiftDownFast;
 import org.usfirst.frc.team4859.robot.commands.LiftStop;
 import org.usfirst.frc.team4859.robot.commands.LiftUp;
+import org.usfirst.frc.team4859.robot.commands.LiftUpFast;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -21,30 +24,45 @@ public class OI {
 	
 	// Create button for precision mode for joystick button 12
 	Button precisionMode = new JoystickButton(joystickP0, 12);
-	
-	// Create liftDown button on xboxP1 for button 6
+
+	// Create liftUp button on xboxP1 for button 1
+	Button liftUp = new JoystickButton(xboxP1, 1);
+		
+
+	// Create liftDown button on xboxP1 for button 2
 	Button liftDown = new JoystickButton(xboxP1, 2);
 	
-	// Create liftUp button on xboxP1 for button 5
-	Button liftUp = new JoystickButton(xboxP1, 1);
+	// Create liftDownFast button on xboxP1 for button 3
+	Button liftDownFast = new JoystickButton(xboxP1, 3);
+		
 	
+	// Create liftUpFast button on xboxP1 for button 4
+	Button liftUpFast = new JoystickButton(xboxP1, 4);
+		
+
+	
+
+
 	public OI()
 	{
 		precisionMode.toggleWhenPressed(new PrecisionMode());
+		
 		liftUp.whenPressed(new LiftUp());
 		liftUp.whenReleased(new LiftStop());
+		
 		liftDown.whenPressed(new LiftDown());
 		liftDown.whenReleased(new LiftStop());
+		
+		liftUpFast.whenPressed(new LiftUpFast());
+		liftUpFast.whenReleased(new LiftStop());
+		
+		liftDownFast.whenPressed(new LiftDownFast());
+		liftDownFast.whenReleased(new LiftStop());
 	}
 	
 	public Joystick getJoystick()
 	{
 		return joystickP0;
 	}
-	
-//	public Joystick getJoystickP1()
-//	{
-//		return joystickP1;
-//	}
 }
 
