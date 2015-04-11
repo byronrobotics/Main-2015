@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -16,6 +17,10 @@ public class Chassis extends Subsystem
 	//Setting chassis motors to CANTalon IDs
 	static CANTalon motorChassisLeft = new CANTalon(RobotMap.talonDevIDChassisLeft);
 	static CANTalon motorChassisRight = new CANTalon(RobotMap.talonDevIDChassisRight);
+	
+	//Setting chassis motors to TalonSR IDs (PWM)
+	static Talon motorChassisSRLeft = new Talon(RobotMap.talonDevIDChassisSRLeft);
+	static Talon motorChassisSRRight = new Talon(RobotMap.talonDevIDChassisSRRight);
 	
 	//front is top of "U" back is bottom of "U"
 	// Creates robot drive configuration with a left and right motor

@@ -19,8 +19,11 @@ public class RobotMap {
 	public static int talonDevIDChassisRight = 14;
 	public static int talonDevIDChassisLeft = 12;
 	
-	public static int  talonDevIDLifterRight =  0; //Looking with input backwards and output forwards
-	public static int  talonDevIDLifterLeft =  0;  //Looking with input backwards and output forwards
+	public static int talonDevIDLifterRight =  100; //Looking with input backwards and output forwards
+	public static int talonDevIDLifterLeft =  100;  //Looking with input backwards and output forwards
+	
+	public static int talonDevIDChassisSRRight = 100;
+	public static int talonDevIDChassisSRLeft = 100;
 	
 	public static int talonDevIDLifterSRLeft = 0; //Talon SR on Pwm 0
 	public static int talonDevIDLifterSRRight = 1; //Talon SR on Pwm 1
