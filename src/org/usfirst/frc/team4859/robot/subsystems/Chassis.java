@@ -19,8 +19,8 @@ public class Chassis extends Subsystem
 	static CANTalon motorChassisRight = new CANTalon(RobotMap.talonDevIDChassisRight);
 	
 	//Setting chassis motors to TalonSR IDs (PWM)
-	static Talon motorChassisSRLeft = new Talon(RobotMap.talonDevIDChassisSRLeft);
-	static Talon motorChassisSRRight = new Talon(RobotMap.talonDevIDChassisSRRight);
+	//static Talon motorChassisSRLeft = new Talon(RobotMap.talonDevIDChassisSRLeft);
+	//static Talon motorChassisSRRight = new Talon(RobotMap.talonDevIDChassisSRRight);
 	
 	//front is top of "U" back is bottom of "U"
 	// Creates robot drive configuration with a left and right motor
