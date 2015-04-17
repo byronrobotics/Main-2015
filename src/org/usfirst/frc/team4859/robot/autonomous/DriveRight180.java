@@ -9,27 +9,32 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveRight180 extends Command {
 
-    public DriveRight180()
+	private double Time;
+	
+    public DriveRight180(double inputTime)
     {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
+        Time = inputTime;
     }
 
     // Called just before this Command runs the first time
     protected void initialize()
     {
     	Robot.chassis.DriveRight180();
+    	setTimeout(Time);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
     {
+    	Robot.chassis.DriveRight180();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
     {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true
