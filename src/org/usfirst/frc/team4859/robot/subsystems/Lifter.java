@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 // The lifting mechanism  control
 
-public class Lifter extends Subsystem {
-	
+public class Lifter extends Subsystem
+{	
 	//Forward limit switch is bottom limit switch
 	//Reverse limit switch is the top limit switch
 	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight); //main
@@ -39,18 +39,18 @@ public class Lifter extends Subsystem {
 	public void liftUp()
 	{ 
 		//set motor speeds for when you call LiftUp
-		motorLifterRight.set(0.6);
-		motorLifterSRLeft.set(0.5);
-		motorLifterSRRight.set(-0.5);
+		motorLifterRight.set(-0.65);
+//		motorLifterSRLeft.set(0.5);
+//		motorLifterSRRight.set(-0.5);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Up");
 	}
 	
 	public void liftUpFast(){ // brings lift up du
 		//set motor speeds for when you call LiftUp
-		motorLifterRight.set(0.8);
-		motorLifterSRLeft.set(0.7);
-		motorLifterSRRight.set(-0.7);
+		motorLifterRight.set(-1.0);
+//		motorLifterSRLeft.set(0.7);
+//		motorLifterSRRight.set(-0.7);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Up");
 	}
@@ -58,9 +58,9 @@ public class Lifter extends Subsystem {
 	public void liftDown() //brings lift down du.
 	{
 		//set motor speeds for when you call LiftDown
-		motorLifterRight.set(-0.4);
-		motorLifterSRLeft.set(-0.4);
-		motorLifterSRRight.set(0.4);
+		motorLifterRight.set(0.6);
+//		motorLifterSRLeft.set(-0.4);
+//		motorLifterSRRight.set(0.4);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Down");
 	}
@@ -68,37 +68,37 @@ public class Lifter extends Subsystem {
 	public void liftDownFast() //brings lift down du.
 	{
 		//set motor speeds for when you call LiftDown
-		motorLifterRight.set(-0.65);
-		motorLifterSRLeft.set(-0.65);
-		motorLifterSRRight.set(0.65);
+		motorLifterRight.set(1.0);
+//		motorLifterSRLeft.set(-0.65);
+//		motorLifterSRRight.set(0.65);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Down");
 	}
 	
 	public void liftStop() //stops lift motors du
 	{
-		//motorLifterRight.ClearIaccum();
+		motorLifterRight.ClearIaccum();
 		//set motor speeds for when you call LiftStop
 		motorLifterRight.set(0.0);
-		motorLifterSRLeft.set(0.);
-		motorLifterSRRight.set(0.0);
+//		motorLifterSRLeft.set(0.);
+//		motorLifterSRRight.set(0.0);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Stopped");
 	}
 	
 	public void liftUpTime()
 	{
-		motorLifterRight.set(0.7);
-		motorLifterSRLeft.set(0.65);
-		motorLifterSRRight.set(-0.65);
+		motorLifterRight.set(-0.7);
+//		motorLifterSRLeft.set(0.65);
+//		motorLifterSRRight.set(-0.65);
 
 	}
 
 	public void liftDownTime()
 	{
-		motorLifterRight.set(-0.5);
-		motorLifterSRLeft.set(-0.45);
-		motorLifterSRRight.set(0.45);
+		motorLifterRight.set(0.5);
+//		motorLifterSRLeft.set(-0.45);
+//		motorLifterSRRight.set(0.45);
 
 	}
 	

@@ -42,10 +42,10 @@ public class Robot extends IterativeRobot {
 		autonomousChooser.addDefault("Start Left Get Tote", new AutoStartLeftTote());
 		autonomousChooser.addDefault("Start Mid Get Tote", new AutoStartMidTote());
 		autonomousChooser.addDefault("Start Right Get Tote", new AutoStartRightTote());
-		autonomousChooser.addDefault("Start Left Get Can", new AutoStartLeftCan());
-		autonomousChooser.addDefault("Start Mid Get Can", new AutoStartMidCan());
-		autonomousChooser.addDefault("Start Right Get Can", new AutoStartRightCan());
-		autonomousChooser.addDefault("Start Auto", new Autonomous());
+		autonomousChooser.addDefault("Start Left NULL", new AutoStartLeftCan());
+		autonomousChooser.addDefault("Start Mid NULL", new AutoStartMidCan());
+		autonomousChooser.addDefault("Start Right NULL", new AutoStartRightCan());
+		autonomousChooser.addDefault("Start Auto NULL", new Autonomous());
 		autonomousChooser.addDefault("Start Nothing", new AutoNothing());
 		SmartDashboard.putData("Autonomous Mode Chooser", autonomousChooser);
 		

@@ -3,34 +3,38 @@ package org.usfirst.frc.team4859.robot.commands;
 import org.usfirst.frc.team4859.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class LiftStop extends Command {
-	public LiftStop() // Takes control of the Lifter subsystem so no other command runs on it
+public class LiftStop extends Command
+{
+	public LiftStop()
 	{
 		requires(Robot.lifter);
 	}
 	
-	protected void initialize() // Any code that is run at the beginning of the command should be placed here
+	
+	protected void initialize(){
+		Robot.lifter.liftStop();
+	}
+
+	
+	protected void execute()
 	{
 		Robot.lifter.liftStop();
 	}
 
-	protected void execute() // Runs the LiftStop method in the Lifter subsystem every 20ms/50 times per second
-	{
-		Robot.lifter.liftStop();	
-	}
-
-	protected boolean isFinished() // Checks if the command has finished running
-	{
+	
+	protected boolean isFinished(){
 		return false;
 	}
 
-	protected void end() // If isFinished returns true, run this method, which should stop what the command was doing
+	
+	protected void end()
 	{
 		Robot.lifter.liftStop();
 	}
+
 	
-	protected void interrupted() // Runs if a command takes control of the subsystem this command was using
+	protected void interrupted()
 	{
-		end();
+		//end();
 	}
 }

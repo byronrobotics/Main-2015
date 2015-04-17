@@ -23,10 +23,11 @@ public class AutoStartRightTote extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	System.out.println("AutoStartRightTote");
-    	addSequential(new DriveStraight(3));
+    	addSequential(new DriveStraight(0.25));
     	addSequential(new LiftUpTime(0.6));
-    	addSequential(new DriveRight180(1));
-    	addSequential(new DriveStraight(4));
+    	addSequential(new DriveRight180(1.3));
+    	addSequential(new DriveStraight(3.5));
+    	addSequential(new DriveRight180(2.6));
     	addSequential(new DriveStop());
     }
 }
