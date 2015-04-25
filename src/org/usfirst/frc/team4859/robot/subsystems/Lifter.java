@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 // The lifting mechanism  control
 
-public class Lifter extends Subsystem
-{	
+public class Lifter extends Subsystem {
+	
 	//Forward limit switch is bottom limit switch
 	//Reverse limit switch is the top limit switch
 	static CANTalon motorLifterRight = new CANTalon(RobotMap.talonDevIDLifterRight); //main
