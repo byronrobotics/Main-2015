@@ -6,6 +6,9 @@ import org.usfirst.frc.team4859.robot.commands.LiftStop;
 import org.usfirst.frc.team4859.robot.commands.LiftUp;
 import org.usfirst.frc.team4859.robot.commands.LiftUpFast;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
+import org.usfirst.frc.team4859.robot.commands.ServoBackwards;
+import org.usfirst.frc.team4859.robot.commands.ServoForwards;
+import org.usfirst.frc.team4859.robot.commands.ServoStop;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -36,6 +39,10 @@ public class OI {
 	
 	// Create liftUpFast button on xboxP1 for button 4
 	Button liftUpFast = new JoystickButton(xboxP1, 4);
+	
+	Button servoForwards = new JoystickButton(joystickP0, 1);
+
+	Button servoBackwards = new JoystickButton(joystickP0, 2);
 
 	public OI()
 	{
@@ -52,6 +59,12 @@ public class OI {
 		
 		liftDownFast.whenPressed(new LiftDownFast());
 		liftDownFast.whenReleased(new LiftStop());
+		
+		servoForwards.whenPressed(new ServoForwards());
+		servoForwards.whenReleased(new ServoStop());
+		
+		servoBackwards.whenPressed(new ServoBackwards());
+		servoBackwards.whenReleased(new ServoStop());
 	}
 	
 	public Joystick getJoystick()

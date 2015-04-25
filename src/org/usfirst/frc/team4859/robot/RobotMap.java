@@ -28,6 +28,8 @@ public class RobotMap {
 	public static int talonDevIDLifterSRLeft = 0; //Talon SR on Pwm 0
 	public static int talonDevIDLifterSRRight = 1; //Talon SR on Pwm 1
 	
+	public static int servoDevIDMain = 3;
+	
 	// Create precision mode variable and set to false by default
 	public static boolean pMode = false;
 }
