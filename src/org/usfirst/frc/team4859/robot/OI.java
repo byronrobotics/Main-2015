@@ -30,20 +30,12 @@ public class OI {
 
 	// Create liftDown button on xboxP1 for button 2
 	Button liftDown = new JoystickButton(xboxP1, 2);
-<<<<<<< HEAD
-	Button liftDownFast = new JoystickButton(xboxP1, 3);
 	
 	// Create liftUp button on xboxP1 for button 5
-	Button liftUp = new JoystickButton(xboxP1, 1);
 	Button liftUpFast = new JoystickButton(xboxP1, 4);
-=======
 	
 	// Create liftDownFast button on xboxP1 for button 3
 	Button liftDownFast = new JoystickButton(xboxP1, 3);
->>>>>>> origin/master
-	
-	// Create liftUpFast button on xboxP1 for button 4
-	Button liftUpFast = new JoystickButton(xboxP1, 4);
 
 	public OI()
 	{
