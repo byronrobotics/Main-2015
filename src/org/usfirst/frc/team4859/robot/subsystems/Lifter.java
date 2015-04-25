@@ -1,10 +1,8 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
 import org.usfirst.frc.team4859.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -24,8 +22,6 @@ public class Lifter extends Subsystem {
 	
 	//Creating PhotoSensor
 	static AnalogInput photoSwitch = new AnalogInput(0);
-	
-	static Servo servo= new Servo(RobotMap.servoDevIDMain);
 	
 	public Lifter()
 	{
@@ -161,17 +157,5 @@ public class Lifter extends Subsystem {
 					motorLifterRight.set(0.0);
 					SmartDashboard.putString("Lift", "Error-Down");
 			} 
-		}
-		public void servoForwards()
-		{
-			servo.setAngle(90);
-		}
-		public void servoBackwards()
-		{
-			servo.setAngle(-90);
-		}
-		public void servoStop()
-		{
-			servo.setAngle(0);
 		}
 }
