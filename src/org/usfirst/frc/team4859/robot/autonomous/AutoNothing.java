@@ -1,7 +1,5 @@
 package org.usfirst.frc.team4859.robot.autonomous;
 
-import org.usfirst.frc.team4859.robot.Conversions.Conversions;
-
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class AutoNothing extends CommandGroup {
@@ -24,6 +22,6 @@ public class AutoNothing extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	addSequential(new DriveStraight(Conversions.distance2time(5)));
+    	addSequential(new DriveStop());
     }
 }    
