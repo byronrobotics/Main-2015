@@ -16,7 +16,7 @@ public class ThrottleLookup
 	//got to go fast
 	public static double[][] correctionTable3 = {
 		{.02,  .25,  .50,  .75,  1.0},
-		{.00, -.06, -.10, -.30, -5.0}};
+		{.00, -.06, -.10, -.30, -0.5}};
 
 	//got to go fast
 	public static double[][] correctionTable4 = {
@@ -36,7 +36,7 @@ public class ThrottleLookup
 				break;
 			case "SlowT": correctionTable = correctionTable3;
 				break;
-			case "NormT": correctionTable = correctionTable3;
+			case "NormT": correctionTable = correctionTable4;
 				break;
 			default : correctionTable = correctionTable1;
 		}

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4859.robot.autonomous;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc.team4859.robot.Conversions.Conversion;
 
 public class Autonomous extends CommandGroup {
     
@@ -22,6 +23,6 @@ public class Autonomous extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	addSequential(new DriveStraight());
+    	addSequential(new DriveStraight(Conversion.distance2time(10)));
     }
 }

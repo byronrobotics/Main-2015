@@ -61,7 +61,7 @@ public class Chassis extends Subsystem
 	public void DriveStraight(){		
 //		motorChassisRight.changeControlMode(ControlMode.Speed);
 //		motorChassisLeft.changeControlMode(ControlMode.Speed);
-		chassisDrive.arcadeDrive(-0.5,0);
+		chassisDrive.arcadeDrive(-0.75,0);
 	}
 	
 	public void DriveBackwards(){		
