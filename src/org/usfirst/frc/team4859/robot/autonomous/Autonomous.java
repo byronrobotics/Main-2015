@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4859.robot.autonomous;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc.team4859.robot.Conversions.Conversions;
 
 public class Autonomous extends CommandGroup {
     
@@ -22,6 +23,33 @@ public class Autonomous extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	addSequential(new DriveStraight());
+    	//Time Of auto is 15 Period DOO THE MATH
+    	addParallel(new LiftUpTime(0));
+    	addSequential(new DriveRight180(Conversions.distance2time(1)));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new DriveLeft180(0));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new DriveLeft180(0));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new DriveRight180(0));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new LiftDownTime(0));
+    	addParallel(new LiftUpTime(0));
+    	addSequential(new DriveRight180(0));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new DriveLeft180(0));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new DriveLeft180(0));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new DriveRight180(0));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new LiftDownTime(0));
+    	addParallel(new LiftUpTime(0));
+    	addSequential(new DriveRight180(0));
+    	addSequential(new DriveStraight(0));
+    	addSequential(new DriveLeft180(0));
+    	addSequential(new LiftDownTime(0));
+    	addSequential(new DriveBackwards(0));
+    	addSequential(new DriveStop());
     }
 }
