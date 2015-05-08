@@ -1,9 +1,14 @@
 package org.usfirst.frc.team4859.robot.subsystems;
 
 import org.usfirst.frc.team4859.robot.RobotMap;
+import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
+import org.usfirst.frc.team4859.robot.commands.LimitSwitch;
+
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -20,6 +25,8 @@ public class Lifter extends Subsystem {
 	static Talon motorLifterSRLeft = new Talon(RobotMap.talonDevIDLifterSRLeft);
 	static Talon motorLifterSRRight = new Talon(RobotMap.talonDevIDLifterSRRight);
 	
+	public DigitalInput limitSwitch = new DigitalInput(0);
+	
 	//Creating PhotoSensor
 	static AnalogInput photoSwitch = new AnalogInput(0);
 	
@@ -33,6 +40,7 @@ public class Lifter extends Subsystem {
 	
 	protected void initDefaultCommand() 
 	{
+		setDefaultCommand(new LimitSwitch());
 	}
 	
 	// brings lift up 
