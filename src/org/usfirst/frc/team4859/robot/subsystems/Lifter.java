@@ -40,8 +40,8 @@ public class Lifter extends Subsystem
 	{ 
 		//set motor speeds for when you call LiftUp
 		motorLifterRight.set(-0.65);
-//		motorLifterSRLeft.set(0.5);
-//		motorLifterSRRight.set(-0.5);
+		motorLifterSRLeft.set(0.5);
+		motorLifterSRRight.set(-0.5);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Up");
 	}
@@ -49,8 +49,8 @@ public class Lifter extends Subsystem
 	public void liftUpFast(){ // brings lift up du
 		//set motor speeds for when you call LiftUp
 		motorLifterRight.set(-1.0);
-//		motorLifterSRLeft.set(0.7);
-//		motorLifterSRRight.set(-0.7);
+		motorLifterSRLeft.set(0.7);
+		motorLifterSRRight.set(-0.7);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Up");
 	}
@@ -59,8 +59,8 @@ public class Lifter extends Subsystem
 	{
 		//set motor speeds for when you call LiftDown
 		motorLifterRight.set(0.6);
-//		motorLifterSRLeft.set(-0.4);
-//		motorLifterSRRight.set(0.4);
+		motorLifterSRLeft.set(-0.4);
+		motorLifterSRRight.set(0.4);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Down");
 	}
@@ -69,8 +69,8 @@ public class Lifter extends Subsystem
 	{
 		//set motor speeds for when you call LiftDown
 		motorLifterRight.set(1.0);
-//		motorLifterSRLeft.set(-0.65);
-//		motorLifterSRRight.set(0.65);
+		motorLifterSRLeft.set(-0.65);
+		motorLifterSRRight.set(0.65);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Down");
 	}
@@ -80,8 +80,8 @@ public class Lifter extends Subsystem
 		motorLifterRight.ClearIaccum();
 		//set motor speeds for when you call LiftStop
 		motorLifterRight.set(0.0);
-//		motorLifterSRLeft.set(0.);
-//		motorLifterSRRight.set(0.0);
+		motorLifterSRLeft.set(0.0);
+		motorLifterSRRight.set(0.0);
 		SmartDashboard.putNumber("LiftMotor Right", motorLifterRight.getEncVelocity());
 		SmartDashboard.putString("Lift", "Stopped");
 	}
@@ -89,16 +89,16 @@ public class Lifter extends Subsystem
 	public void liftUpTime()
 	{
 		motorLifterRight.set(-0.7);
-//		motorLifterSRLeft.set(0.65);
-//		motorLifterSRRight.set(-0.65);
+		motorLifterSRLeft.set(0.65);
+		motorLifterSRRight.set(-0.65);
 
 	}
 
 	public void liftDownTime()
 	{
 		motorLifterRight.set(0.5);
-//		motorLifterSRLeft.set(-0.45);
-//		motorLifterSRRight.set(0.45);
+		motorLifterSRLeft.set(-0.45);
+		motorLifterSRRight.set(0.45);
 
 	}
 	
