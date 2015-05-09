@@ -4,7 +4,7 @@ public class ThrottleLookup
 {
 	
 
-	// SlowY
+		// SlowY
 		public static double[][] correctionTable1 = {
 			{.01, .25, .50, .75, 1.0},
 			{.00, .08, .12, .20, .40}};

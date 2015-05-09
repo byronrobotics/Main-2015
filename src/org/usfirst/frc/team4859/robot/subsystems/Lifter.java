@@ -4,6 +4,7 @@ import org.usfirst.frc.team4859.robot.RobotMap;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -101,6 +102,7 @@ public class Lifter extends Subsystem
 		motorLifterSRRight.set(0.45);
 
 	}
+	
 	
 	//		// Utility function to adjust joystick coordinates
 	//		private double joystickAdjust(double value, double deadzone)

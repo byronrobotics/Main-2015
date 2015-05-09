@@ -1,38 +1,43 @@
 package org.usfirst.frc.team4859.robot.commands;
 
-import org.usfirst.frc.team4859.robot.RobotMap;
-
+import org.usfirst.frc.team4859.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class PrecisionOff extends Command {
+public class Servo0 extends Command {
 
-    public PrecisionOff() {    	
-   }
+    public Servo0() 
+    {
+    	requires(Robot.servos);
+    }
 
     // Called just before this Command runs the first time
-    protected void initialize() {
-    	System.out.println("Precision Off");
-    	RobotMap.pMode = false;
-     }
+    protected void initialize() 
+    {
+    	Robot.servos.servo0();
+    }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
+    protected void execute() 
+    {
     }
 
     // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return true;
+    protected boolean isFinished()
+    {
+        return false;
     }
 
     // Called once after isFinished returns true
-    protected void end() {
+    protected void end()
+    {
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
-    protected void interrupted() {
+    protected void interrupted()
+    {
     }
 }
