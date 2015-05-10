@@ -7,7 +7,7 @@ import org.usfirst.frc.team4859.robot.commands.LiftUp;
 import org.usfirst.frc.team4859.robot.commands.LiftUpFast;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
 import org.usfirst.frc.team4859.robot.commands.Servo0;
-import org.usfirst.frc.team4859.robot.commands.Servo90;
+import org.usfirst.frc.team4859.robot.commands.Servo45;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -61,7 +61,7 @@ public class OI {
 		
 		servo0.whileHeld(new Servo0());
 
-		servo90.whileHeld(new Servo90());
+		servo90.whileHeld(new Servo45());
 	}
 	
 	public Joystick getJoystick()

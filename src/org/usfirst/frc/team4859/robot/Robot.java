@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4859.robot;
 
 import org.usfirst.frc.team4859.robot.autonomous.AutoNothing;
+import org.usfirst.frc.team4859.robot.autonomous.AutoStartCan;
 import org.usfirst.frc.team4859.robot.autonomous.AutoStartLeftCan;
 import org.usfirst.frc.team4859.robot.autonomous.AutoStartLeftTote;
 import org.usfirst.frc.team4859.robot.autonomous.AutoStartMidCan;
@@ -11,6 +12,7 @@ import org.usfirst.frc.team4859.robot.autonomous.Autonomous;
 import org.usfirst.frc.team4859.robot.subsystems.Chassis;
 import org.usfirst.frc.team4859.robot.subsystems.Lifter;
 import org.usfirst.frc.team4859.robot.subsystems.Servos;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -42,6 +44,7 @@ public class Robot extends IterativeRobot {
 
 		// Add autonomous modes
 		autonomousChooser = new SendableChooser();
+		autonomousChooser.addDefault("TEST", new AutoStartCan());
 		autonomousChooser.addDefault("Start Left Get Tote", new AutoStartLeftTote());
 		autonomousChooser.addDefault("Start Mid Get Tote", new AutoStartMidTote());
 		autonomousChooser.addDefault("Start Right Get Tote", new AutoStartRightTote());

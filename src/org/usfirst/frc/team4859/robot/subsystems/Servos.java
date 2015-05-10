@@ -20,8 +20,8 @@ public class Servos extends Subsystem {
 		binServo.setAngle(0.0);	
 	}
 
-	public void servo90()
+	public void servo45()
 	{
-		binServo.set(90.0);
+		binServo.setAngle(85.0);
 	}
 }

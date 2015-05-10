@@ -6,9 +6,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Servo90 extends Command {
+public class Servo45 extends Command {
 
-    public Servo90() 
+    public Servo45() 
     {
     	requires(Robot.servos);
     }
@@ -16,7 +16,7 @@ public class Servo90 extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-    	Robot.servos.servo90();
+    	Robot.servos.servo45();
     }
 
     // Called repeatedly when this Command is scheduled to run
