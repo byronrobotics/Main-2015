@@ -1,8 +1,5 @@
 package org.usfirst.frc.team4859.robot.autonomous;
 
-import org.usfirst.frc.team4859.robot.commands.Servo0;
-import org.usfirst.frc.team4859.robot.commands.Servo45;
-
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class AutoStartCan extends CommandGroup {
