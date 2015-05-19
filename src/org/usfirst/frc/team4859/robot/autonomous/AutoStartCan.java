@@ -24,7 +24,8 @@ public class AutoStartCan extends CommandGroup {
         // arm.
     	System.out.println("AutoStartCan");
     	addSequential(new AutoServo45(1));
-    	addSequential(new DriveStraight(1));
+    	//Speed needs to be NEGATIVE
+    	addSequential(new DriveStraight(2, -.7));
     	addSequential(new AutoServo0(1));
     	addSequential(new LiftUpTime(0.75));
     	addSequential(new DriveStop());

@@ -56,10 +56,11 @@ public class Chassis extends Subsystem
 		chassisDrive.arcadeDrive(yAxis, twist);
 	}
 	
-	public void DriveStraight(){		
+	public void DriveStraight(double inputSpeed)
+	{
 		//motorChassisRight.changeControlMode(ControlMode.Speed);
 		//motorChassisLeft.changeControlMode(ControlMode.Speed);
-		chassisDrive.arcadeDrive(-0.65,0);
+		chassisDrive.arcadeDrive(inputSpeed,0);
 	}
 	
 	public void DriveBackwards(){		

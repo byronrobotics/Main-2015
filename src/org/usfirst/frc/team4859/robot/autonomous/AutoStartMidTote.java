@@ -23,10 +23,10 @@ public class AutoStartMidTote extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	System.out.println("AutoStartMidCan");
-    	addSequential(new DriveStraight(0.25));
+    	addSequential(new DriveStraight(0.25, -.65));
     	addSequential(new LiftUpTime(0.6));
     	addSequential(new DriveRight180(1.3));
-    	addSequential(new DriveStraight(3.75));
+    	addSequential(new DriveStraight(3.75, -.65));
     	addSequential(new DriveRight180(2.6));
     	addSequential(new DriveStop());
     }

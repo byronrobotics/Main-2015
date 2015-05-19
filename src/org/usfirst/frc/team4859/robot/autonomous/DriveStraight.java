@@ -7,25 +7,27 @@ import edu.wpi.first.wpilibj.command.Command;
 public class DriveStraight extends Command {
 
 	private double Time;
+	private double Speed;
 	
-    public DriveStraight(double inputTime)
+    public DriveStraight(double inputTime, double inputSpeed)
     {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
         Time = inputTime;
+        Speed = inputSpeed;
     }
 
     // Called just before this Command runs the first time
     protected void initialize()
     {
-    	Robot.chassis.DriveStraight();
+    	Robot.chassis.DriveStraight(Speed);
     	setTimeout(Time);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
     {
-    	Robot.chassis.DriveStraight();
+    	Robot.chassis.DriveStraight(Speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
