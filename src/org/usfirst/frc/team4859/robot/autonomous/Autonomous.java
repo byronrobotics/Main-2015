@@ -30,10 +30,10 @@ public class Autonomous extends CommandGroup {
     	addSequential(new DriveStraight(1.3));
     	addSequential(new LiftDownTime(0.2));
     	addParallel(new LiftUpTime(0.35));
-    	addSequential(new DriveRight180(0.50));
+    	addSequential(new DriveRight(0.50));
     	addSequential(new DriveStraight(1.5));
     	addParallel(new LiftDownTime(0.20));
-    	addSequential(new DriveLeft180(0.50));
+    	addSequential(new DriveLeft(0.50));
     	addSequential(new DriveBackwards(0.5));
     	addSequential(new DriveStop());
     }

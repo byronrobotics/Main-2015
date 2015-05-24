@@ -7,7 +7,7 @@ import org.usfirst.frc.team4859.robot.commands.LiftUp;
 import org.usfirst.frc.team4859.robot.commands.LiftUpFast;
 import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
 import org.usfirst.frc.team4859.robot.commands.Servo0;
-import org.usfirst.frc.team4859.robot.commands.Servo45;
+import org.usfirst.frc.team4859.robot.commands.Servo90;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -21,7 +21,7 @@ public class OI {
 	// Create a joystick on port 0
 	private final Joystick joystickP0 = new Joystick(0);
 
-	// Create a joystick (xbox controller) on port 1
+	// Create a xbox controller on port 1
 	private final Joystick xboxP1 = new Joystick(1);
 	
 	// Create button for precision mode for joystick button 12
@@ -35,7 +35,7 @@ public class OI {
 	
 	// Create liftDownFast button on xboxP1 for button 3
 	Button liftDownFast = new JoystickButton(xboxP1, 3);
-	
+
 	// Create liftUpFast button on xboxP1 for button 4
 	Button liftUpFast = new JoystickButton(xboxP1, 4);
 	
@@ -61,7 +61,7 @@ public class OI {
 		
 		servo0.whileHeld(new Servo0());
 
-		servo90.whileHeld(new Servo45());
+		servo90.whileHeld(new Servo90());
 	}
 	
 	public Joystick getJoystick()

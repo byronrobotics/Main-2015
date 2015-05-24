@@ -7,11 +7,11 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveRight180 extends Command {
+public class DriveRight extends Command {
 
 	private double Time;
 	
-    public DriveRight180(double inputTime)
+    public DriveRight(double inputTime)
     {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);

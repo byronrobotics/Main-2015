@@ -6,11 +6,11 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class AutoServo45 extends Command {
+public class AutoServo90 extends Command {
 	
 	private double Time;
 
-    public AutoServo45(double inputTime) 
+    public AutoServo90(double inputTime) 
     {
     	requires(Robot.servos);
     	Time = inputTime;
@@ -19,7 +19,7 @@ public class AutoServo45 extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-    	Robot.servos.servo45();
+    	Robot.servos.servo90();
     	setTimeout(Time);
     }
 

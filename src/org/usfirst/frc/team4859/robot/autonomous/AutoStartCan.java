@@ -23,7 +23,7 @@ public class AutoStartCan extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	System.out.println("AutoStartCan");
-    	addSequential(new AutoServo45(1));
+    	addSequential(new AutoServo90(1));
     	//Speed needs to be NEGATIVE
     	addSequential(new DriveStraight(2, -.7));
     	addSequential(new AutoServo0(1));

@@ -1,38 +1,43 @@
-package org.usfirst.frc.team4859.robot.commands;
+package org.usfirst.frc.team4859.robot.autonomous;
 
 import org.usfirst.frc.team4859.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
-public class Servo45 extends Command {
+public class DriveLeft extends Command {
 
-    public Servo45() 
+	private double Time;
+	
+    public DriveLeft(double inputTime)
     {
-    	requires(Robot.servos);
+        // Use requires() here to declare subsystem dependencies
+    	requires(Robot.chassis);
+    	Time = inputTime;
     }
 
     // Called just before this Command runs the first time
-    protected void initialize() 
+    protected void initialize()
     {
-    	Robot.servos.servo45();
+    	Robot.chassis.DriveLeft180();
+    	setTimeout(Time);
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() 
+    protected void execute()
     {
+    	Robot.chassis.DriveLeft180();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
     {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true
     protected void end()
     {
+    	Robot.chassis.DriveStop();
     }
 
     // Called when another command which requires one or more of the same
