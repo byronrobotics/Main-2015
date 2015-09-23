@@ -16,17 +16,8 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 	
-	public static int talonDevIDChassisRight = 14;
-	public static int talonDevIDChassisLeft = 12;
-	
-	public static int  talonDevIDLifterRight =  16; //Looking with input backwards and output forwards
-	public static int  talonDevIDLifterLeft =  11;  //Looking with input backwards and output forwards
-	
-	public static int talonDevIDLifterSRLeft = 0; //Talon SR on Pwm 0
-	public static int talonDevIDLifterSRRight = 1; //Talon SR on Pwm 1
-	
-	public static int servoDevIDMain = 9;
-	
-	// Create precision mode variable and set to false by default
-	public static boolean pMode = false;
+	public static int solenoidDevIDSolenoid1A = 1;
+	public static int solenoidDevIDSolenoid2B = 2;
+	public static int solenoidDevIDSolenoid3X = 3;
+	public static int solenoidDevIDSolenoid4Y = 4;
 }
