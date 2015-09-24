@@ -5,6 +5,7 @@ import org.usfirst.frc.team4859.robot.commands.Solenoid1A;
 import org.usfirst.frc.team4859.robot.commands.Solenoid2B;
 import org.usfirst.frc.team4859.robot.commands.Solenoid3X;
 import org.usfirst.frc.team4859.robot.commands.Solenoid4Y;
+import org.usfirst.frc.team4859.robot.commands.SolenoidStop;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -20,16 +21,16 @@ public class OI {
 	private final Joystick xboxP1 = new Joystick(0);
 	
 		// Create Solenoid1A button on xboxP1 for button 1 (A)
-		Button solenoid1A = new JoystickButton(xboxP1, 1);
+		Button solenoid1A = new JoystickButton(xboxP1, 3);
 
 		// Create Solenoid2B button on xboxP1 for button 2 (B)
 		Button solenoid2B = new JoystickButton(xboxP1, 2);
 		
 		// Create Soldenoid3X button on xboxP1 for button 3 (X)
-		Button solenoid3X = new JoystickButton(xboxP1, 3);
+		Button solenoid3X = new JoystickButton(xboxP1, 5);
 
 		// Create Solenoid4Y button on xboxP1 for button 4 (Y)
-		Button solenoid4Y = new JoystickButton(xboxP1, 4);
+		Button solenoid4Y = new JoystickButton(xboxP1, 6);
 		
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
@@ -60,10 +61,14 @@ public class OI {
 		
 		public OI()
 		{
-			solenoid1A.whileHeld(new Solenoid1A());
-			solenoid2B.whileHeld(new Solenoid2B());
-			solenoid3X.whileHeld(new Solenoid3X());
-			solenoid4Y.whileHeld(new Solenoid4Y());
+			solenoid1A.whenPressed(new Solenoid1A());
+			solenoid1A.whenReleased(new SolenoidStop());
+			solenoid2B.whenPressed(new Solenoid2B());
+			solenoid2B.whenReleased(new SolenoidStop());
+			solenoid3X.whenPressed(new Solenoid3X());
+			solenoid3X.whenReleased(new SolenoidStop());
+			solenoid4Y.whenPressed(new Solenoid4Y());
+			solenoid4Y.whenReleased(new SolenoidStop());
 		}
 }
 

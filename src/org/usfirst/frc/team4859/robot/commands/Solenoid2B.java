@@ -31,7 +31,7 @@ public class Solenoid2B extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.solenoids.Solenoid2BOff();
+    	Robot.solenoids.SolenoidAllStop();
 
     }
 

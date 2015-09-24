@@ -32,21 +32,10 @@ public class Solenoids extends Subsystem {
     	Solenoid1A.set(true);
     }
     
-    public void Solenoid1AOff()
-    {
-    	Solenoid1A.set(false);
-    }
-    
-    
     
     public void Solenoid2BOn()
     {
     	Solenoid2B.set(true);
-    }
-    
-    public void Solenoid2BOff()
-    {
-    	Solenoid2B.set(false);
     }
     
     
@@ -56,11 +45,6 @@ public class Solenoids extends Subsystem {
     	Solenoid3X.set(true);
     }
     
-    public void Solenoid3XOff()
-    {
-    	Solenoid3X.set(false);
-    }
-    
     
     
     public void Solenoid4YOn()
@@ -68,9 +52,14 @@ public class Solenoids extends Subsystem {
     	Solenoid4Y.set(true);
     }
     
-    public void Solenoid4YOff()
+    
+    public void SolenoidAllStop()
     {
+    	Solenoid1A.set(false);
+    	Solenoid2B.set(false);
+    	Solenoid3X.set(false);
     	Solenoid4Y.set(false);
-    } 
+    }
+    
 }
 

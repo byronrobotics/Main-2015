@@ -7,21 +7,20 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Solenoid3X extends Command {
+public class SolenoidStop extends Command {
 
-    public Solenoid3X() {
+    public SolenoidStop() {
     	requires(Robot.solenoids);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.solenoids.Solenoid3XOn();
+    	Robot.solenoids.SolenoidAllStop();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.solenoids.Solenoid3XOn();
-
+    	Robot.solenoids.SolenoidAllStop();
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -30,7 +30,7 @@ public class Solenoid1A extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.solenoids.Solenoid1AOff();
+    	Robot.solenoids.SolenoidAllStop();
 
     }
 
