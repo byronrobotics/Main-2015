@@ -16,8 +16,8 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 	
-	public static int solenoidDevIDSolenoid1A = 1;
-	public static int solenoidDevIDSolenoid2B = 2;
-	public static int solenoidDevIDSolenoid3X = 3;
-	public static int solenoidDevIDSolenoid4Y = 4;
+	public static int solenoidDevIDSolenoid1A = 0;
+	public static int solenoidDevIDSolenoid2B = 1;
+	public static int solenoidDevIDSolenoid3X = 2;
+	public static int solenoidDevIDSolenoid4Y = 3;
 }
