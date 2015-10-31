@@ -1,13 +1,6 @@
 package org.usfirst.frc.team4859.robot;
 
-import org.usfirst.frc.team4859.robot.commands.LiftDown;
-import org.usfirst.frc.team4859.robot.commands.LiftDownFast;
-import org.usfirst.frc.team4859.robot.commands.LiftStop;
-import org.usfirst.frc.team4859.robot.commands.LiftUp;
-import org.usfirst.frc.team4859.robot.commands.LiftUpFast;
-import org.usfirst.frc.team4859.robot.commands.PrecisionMode;
-import org.usfirst.frc.team4859.robot.commands.Servo0;
-import org.usfirst.frc.team4859.robot.commands.Servo90;
+import org.usfirst.frc.team4859.robot.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -59,9 +52,9 @@ public class OI {
 		liftDownFast.whenPressed(new LiftDownFast());
 		liftDownFast.whenReleased(new LiftStop());
 		
-		servo0.whileHeld(new Servo0());
+		servo0.whenPressed(new Servo0());
 
-		servo90.whileHeld(new Servo90());
+		servo90.whenPressed(new Servo90());
 	}
 	
 	public Joystick getJoystick()

@@ -24,14 +24,14 @@ public class Autonomous extends CommandGroup {
         // arm.
     	addSequential(new DriveStopTime(0.5));
     	addParallel(new LiftUpTime(0.3));
-    	addSequential(new DriveStraight(1.25));
+    	addSequential(new DriveStraight(1.25, .5));
     	addSequential(new LiftDownTime(0.25));
     	addParallel(new LiftUpTime(0.30));
-    	addSequential(new DriveStraight(1.3));
+    	addSequential(new DriveStraight(1.3, .5));
     	addSequential(new LiftDownTime(0.2));
     	addParallel(new LiftUpTime(0.35));
     	addSequential(new DriveRight(0.50));
-    	addSequential(new DriveStraight(1.5));
+    	addSequential(new DriveStraight(1.5, .5));
     	addParallel(new LiftDownTime(0.20));
     	addSequential(new DriveLeft(0.50));
     	addSequential(new DriveBackwards(0.5));
