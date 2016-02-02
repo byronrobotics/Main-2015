@@ -3,9 +3,8 @@ package org.usfirst.frc.team4859.robot.subsystems;
 import org.usfirst.frc.team4859.robot.RobotMap;
 import org.usfirst.frc.team4859.robot.ThrottleLookup.ThrottleLookup;
 import org.usfirst.frc.team4859.robot.commands.DriveWithJoystick;
-
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.CANTalon.ControlMode;
+import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -24,8 +23,8 @@ public class Chassis extends Subsystem
 	public Chassis()
 	{
 		super();
-		motorChassisRight.changeControlMode(ControlMode.PercentVbus);
-		motorChassisLeft.changeControlMode(ControlMode.PercentVbus);
+		motorChassisRight.changeControlMode(TalonControlMode.PercentVbus);
+		motorChassisLeft.changeControlMode(TalonControlMode.PercentVbus);
 		
 		// Set a timeout for the motors (1 second)
 		chassisDrive.setSafetyEnabled(true);

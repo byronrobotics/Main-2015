@@ -62,4 +62,3 @@ public class OI {
 		return joystickP0;
 	}
 }
-

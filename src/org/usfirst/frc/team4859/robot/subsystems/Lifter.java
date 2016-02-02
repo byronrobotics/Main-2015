@@ -3,7 +3,7 @@ package org.usfirst.frc.team4859.robot.subsystems;
 import org.usfirst.frc.team4859.robot.RobotMap;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.CANTalon.ControlMode;
+import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -27,7 +27,7 @@ public class Lifter extends Subsystem
 	public Lifter()
 	{
 		super();
-		motorLifterLeft.changeControlMode(ControlMode.Follower); //change left motor control mode to follower mode
+		motorLifterLeft.changeControlMode(TalonControlMode.Follower); //change left motor control mode to follower mode
 		motorLifterLeft.set(RobotMap.talonDevIDLifterRight); //tell the left motor to follow the right motor
 	}
 	
